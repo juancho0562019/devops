@@ -15,7 +15,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: src/Dockerfile
+      dockerfile: Dockerfile
     container_name: bext_reps_api
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
