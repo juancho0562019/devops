@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bext.Reps.Domain\Bext.Reps.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Commons\Exceptions\" />
+    <Folder Include="Features\Contactos\Commands\Create\" />
+    <Folder Include="Features\Contactos\Commands\Update\" />
+    <Folder Include="Features\Contactos\Queries\Get\" />
+    <Folder Include="Features\Contactos\Queries\GetAll\" />
+    <Folder Include="Features\Entidades\Commands\Create\" />
+    <Folder Include="Features\Entidades\Commands\Update\" />
+    <Folder Include="Features\Entidades\Queries\Get\" />
+    <Folder Include="Features\Entidades\Queries\GetAll\" />
+    <Folder Include="Features\DocumentosIdentidad\" />
+    <Folder Include="Features\Terceros\Queries\GetAll\" />
+  </ItemGroup>
+
+</Project>
