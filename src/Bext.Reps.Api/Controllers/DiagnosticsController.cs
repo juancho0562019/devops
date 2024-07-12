@@ -1,3 +1,9 @@
+using Bext.Reps.Business.Features.Terceros;
+using Bext.Reps.Business.Features.Terceros.Commands.Create;
+using Bext.Reps.Business.Features.Terceros.Commands.Update;
+using Bext.Reps.Business.Features.Terceros.Queries.Get;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 namespace Bext.Reps.Api.Controllers
 {
     [ApiController]
