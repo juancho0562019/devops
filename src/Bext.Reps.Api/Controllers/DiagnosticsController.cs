@@ -20,8 +20,9 @@ namespace Bext.Reps.Api.Controllers
         [HttpGet("settings")]
         public IActionResult GetSettings()
         {
-            var settings = _configuration.GetSection("ConnectionStrings").Value;
-            return Ok(new { ConnectionString = settings });
+            var connectionString = _configuration.GetConnectionString("RepsConnectionString");
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            return Ok(new { ConnectionString = connectionString, Environment = environment });
         }
     }
 }
