@@ -1,0 +1,13 @@
+¨
+3Bext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectP
+ADocumento()@Bext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>.ADocumento()J
+	Fecha.get=Bext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>.Fecha.getL
+
+Fecha.init>Bext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>.Fecha.initL
+
+Nombre.get>Bext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>.Nombre.getN
+Nombre.init?Bext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>.Nombre.initV
+Descripcion.getCBext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>.Descripcion.getX
+Descripcion.initDBext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>.Descripcion.init^
+EstadoDocumento.getGBext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>.EstadoDocumento.get^
+EstadoDocumento.setGBext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>.EstadoDocumento.set

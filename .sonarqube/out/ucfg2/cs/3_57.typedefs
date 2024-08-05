@@ -1,0 +1,12 @@
+å	
+,Bext.Reps.Domain.Entities.EvaluacionServicio4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobject³
+AEvaluacionServicio(Bext.Reps.Domain.Commons.Enums.TipoEvaluacion)nBext.Reps.Domain.Entities.EvaluacionServicio.EvaluacionServicio(Bext.Reps.Domain.Commons.Enums.TipoEvaluacion)¯
+?AddDetalle(Bext.Reps.Domain.Entities.DetalleEvaluacionServicio)lBext.Reps.Domain.Entities.EvaluacionServicio.AddDetalle(Bext.Reps.Domain.Entities.DetalleEvaluacionServicio)U
+TipoEvaluacion.get?Bext.Reps.Domain.Entities.EvaluacionServicio.TipoEvaluacion.getU
+TipoEvaluacion.set?Bext.Reps.Domain.Entities.EvaluacionServicio.TipoEvaluacion.sete
+ServicioInscritoSedeId.getGBext.Reps.Domain.Entities.EvaluacionServicio.ServicioInscritoSedeId.gete
+ServicioInscritoSedeId.setGBext.Reps.Domain.Entities.EvaluacionServicio.ServicioInscritoSedeId.seta
+ServicioInscritoSede.getEBext.Reps.Domain.Entities.EvaluacionServicio.ServicioInscritoSede.geta
+ServicioInscritoSede.setEBext.Reps.Domain.Entities.EvaluacionServicio.ServicioInscritoSede.setI
+Detalles.get9Bext.Reps.Domain.Entities.EvaluacionServicio.Detalles.getI
+Detalles.set9Bext.Reps.Domain.Entities.EvaluacionServicio.Detalles.set

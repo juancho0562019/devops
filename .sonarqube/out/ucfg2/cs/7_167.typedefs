@@ -1,0 +1,13 @@
+ˆ
+-Bext.Reps.Domain.Entities.MovimientoSolicitud4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobject\
+MovimientoSolicitud()CBext.Reps.Domain.Entities.MovimientoSolicitud.MovimientoSolicitud()P
+SolicitudId.get=Bext.Reps.Domain.Entities.MovimientoSolicitud.SolicitudId.getP
+SolicitudId.set=Bext.Reps.Domain.Entities.MovimientoSolicitud.SolicitudId.setL
+Solicitud.get;Bext.Reps.Domain.Entities.MovimientoSolicitud.Solicitud.getL
+Solicitud.set;Bext.Reps.Domain.Entities.MovimientoSolicitud.Solicitud.setX
+EstadoSolicitud.getABext.Reps.Domain.Entities.MovimientoSolicitud.EstadoSolicitud.getX
+EstadoSolicitud.setABext.Reps.Domain.Entities.MovimientoSolicitud.EstadoSolicitud.setF
+
+Accion.get8Bext.Reps.Domain.Entities.MovimientoSolicitud.Accion.getF
+
+Accion.set8Bext.Reps.Domain.Entities.MovimientoSolicitud.Accion.set

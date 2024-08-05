@@ -1,0 +1,12 @@
+·
+ Bext.Reps.Domain.Entities.Nombre'Bext.Reps.Domain.Primitives.ValueObjectobjectS
+GetEqualityComponents()8Bext.Reps.Domain.Entities.Nombre.GetEqualityComponents()5
+Nombre())Bext.Reps.Domain.Entities.Nombre.Nombre()E
+PrimerNombre.get1Bext.Reps.Domain.Entities.Nombre.PrimerNombre.getG
+PrimerNombre.init2Bext.Reps.Domain.Entities.Nombre.PrimerNombre.initI
+PrimerApellido.get3Bext.Reps.Domain.Entities.Nombre.PrimerApellido.getK
+PrimerApellido.init4Bext.Reps.Domain.Entities.Nombre.PrimerApellido.initG
+SegundoNombre.get2Bext.Reps.Domain.Entities.Nombre.SegundoNombre.getI
+SegundoNombre.init3Bext.Reps.Domain.Entities.Nombre.SegundoNombre.initK
+SegundoApellido.get4Bext.Reps.Domain.Entities.Nombre.SegundoApellido.getM
+SegundoApellido.init5Bext.Reps.Domain.Entities.Nombre.SegundoApellido.init

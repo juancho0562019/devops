@@ -1,0 +1,16 @@
+ß
+)Bext.Reps.Domain.Entities.Entidad.BuilderobjectF
+Builder(int)6Bext.Reps.Domain.Entities.Entidad.Builder.Builder(int)¼
+GConIdentificacion(Bext.Reps.Domain.Commons.ValueObjects.Identificacion)qBext.Reps.Domain.Entities.Entidad.Builder.ConIdentificacion(Bext.Reps.Domain.Commons.ValueObjects.Identificacion)Z
+ConRazonSocial(string)@Bext.Reps.Domain.Entities.Entidad.Builder.ConRazonSocial(string)V
+ConDireccion(string)>Bext.Reps.Domain.Entities.Entidad.Builder.ConDireccion(string)–
+4ConDatosContacto(Bext.Reps.Domain.Entities.Contacto)^Bext.Reps.Domain.Entities.Entidad.Builder.ConDatosContacto(Bext.Reps.Domain.Entities.Contacto)–
+4ConTipoNaturalezaJuridica(string?, string?, string?)^Bext.Reps.Domain.Entities.Entidad.Builder.ConTipoNaturalezaJuridica(string?, string?, string?)Z
+ConTipoPersona(string)@Bext.Reps.Domain.Entities.Entidad.Builder.ConTipoPersona(string)`
+ConClasePrestador(string)CBext.Reps.Domain.Entities.Entidad.Builder.ConClasePrestador(string)®
+@ConActaConstitucion(Bext.Reps.Domain.Entities.ActaConstitucion?)jBext.Reps.Domain.Entities.Entidad.Builder.ConActaConstitucion(Bext.Reps.Domain.Entities.ActaConstitucion?)ˆ
+-ConTercero(Bext.Reps.Domain.Entities.Tercero)WBext.Reps.Domain.Entities.Entidad.Builder.ConTercero(Bext.Reps.Domain.Entities.Tercero)ñ
+aConDocumentosEntidad(System.Collections.Generic.List<Bext.Reps.Domain.Entities.DocumentoEntidad>)‹Bext.Reps.Domain.Entities.Entidad.Builder.ConDocumentosEntidad(System.Collections.Generic.List<Bext.Reps.Domain.Entities.DocumentoEntidad>)À
+IConSedes(System.Collections.Generic.List<Bext.Reps.Domain.Entities.Sede>)sBext.Reps.Domain.Entities.Entidad.Builder.ConSedes(System.Collections.Generic.List<Bext.Reps.Domain.Entities.Sede>)<
+Build()1Bext.Reps.Domain.Entities.Entidad.Builder.Build()N
+ValidateFields():Bext.Reps.Domain.Entities.Entidad.Builder.ValidateFields()

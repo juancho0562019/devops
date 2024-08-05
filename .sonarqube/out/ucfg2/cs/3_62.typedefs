@@ -1,0 +1,21 @@
+Ä
+
+%Bext.Reps.Domain.Entities.Funcionario,Bext.Reps.Domain.Primitives.BaseEntity<TKey>objectž
+:UpdateRefreshToken(Bext.Reps.Domain.Entities.RefreshToken)`Bext.Reps.Domain.Entities.Funcionario.UpdateRefreshToken(Bext.Reps.Domain.Entities.RefreshToken)D
+Funcionario()3Bext.Reps.Domain.Entities.Funcionario.Funcionario()>
+
+Nombre.get0Bext.Reps.Domain.Entities.Funcionario.Nombre.get@
+Nombre.init1Bext.Reps.Domain.Entities.Funcionario.Nombre.initD
+EntidadId.get3Bext.Reps.Domain.Entities.Funcionario.EntidadId.getD
+EntidadId.set3Bext.Reps.Domain.Entities.Funcionario.EntidadId.setL
+CodigoInterno.get7Bext.Reps.Domain.Entities.Funcionario.CodigoInterno.getL
+CodigoInterno.set7Bext.Reps.Domain.Entities.Funcionario.CodigoInterno.setP
+RolAplicacionId.get9Bext.Reps.Domain.Entities.Funcionario.RolAplicacionId.getP
+RolAplicacionId.set9Bext.Reps.Domain.Entities.Funcionario.RolAplicacionId.set<
+	Email.get/Bext.Reps.Domain.Entities.Funcionario.Email.get>
+
+Email.init0Bext.Reps.Domain.Entities.Funcionario.Email.initJ
+RefreshToken.get6Bext.Reps.Domain.Entities.Funcionario.RefreshToken.getJ
+RefreshToken.set6Bext.Reps.Domain.Entities.Funcionario.RefreshToken.setL
+RolAplicacion.get7Bext.Reps.Domain.Entities.Funcionario.RolAplicacion.getL
+RolAplicacion.set7Bext.Reps.Domain.Entities.Funcionario.RolAplicacion.set

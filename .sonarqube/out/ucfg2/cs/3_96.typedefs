@@ -1,0 +1,23 @@
+ö
+!Bext.Reps.Domain.Entities.Tercero4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobject8
+	Tercero()+Bext.Reps.Domain.Entities.Tercero.Tercero()<
+GetNombre()-Bext.Reps.Domain.Entities.Tercero.GetNombre()`
+ActualizarTipoPersona(string)?Bext.Reps.Domain.Entities.Tercero.ActualizarTipoPersona(string)Â
+NActualizarIdentificacion(Bext.Reps.Domain.Commons.ValueObjects.Identificacion)pBext.Reps.Domain.Entities.Tercero.ActualizarIdentificacion(Bext.Reps.Domain.Commons.ValueObjects.Identificacion)¢
+>ActualizarNombres(string?, string?, string?, string?, string?)`Bext.Reps.Domain.Entities.Tercero.ActualizarNombres(string?, string?, string?, string?, string?)®
+DActualizarUbicacion(Bext.Reps.Domain.Commons.ValueObjects.Ubicacion)fBext.Reps.Domain.Entities.Tercero.ActualizarUbicacion(Bext.Reps.Domain.Commons.ValueObjects.Ubicacion)œ
+;ActualizarDatosContacto(Bext.Reps.Domain.Entities.Contacto)]Bext.Reps.Domain.Entities.Tercero.ActualizarDatosContacto(Bext.Reps.Domain.Entities.Contacto)D
+TipoPersona.get1Bext.Reps.Domain.Entities.Tercero.TipoPersona.getD
+TipoPersona.set1Bext.Reps.Domain.Entities.Tercero.TipoPersona.setH
+TipoPersonaId.get3Bext.Reps.Domain.Entities.Tercero.TipoPersonaId.getH
+TipoPersonaId.set3Bext.Reps.Domain.Entities.Tercero.TipoPersonaId.setJ
+Identificacion.get4Bext.Reps.Domain.Entities.Tercero.Identificacion.getJ
+Identificacion.set4Bext.Reps.Domain.Entities.Tercero.Identificacion.set:
+
+Nombre.get,Bext.Reps.Domain.Entities.Tercero.Nombre.get:
+
+Nombre.set,Bext.Reps.Domain.Entities.Tercero.Nombre.set@
+Ubicacion.get/Bext.Reps.Domain.Entities.Tercero.Ubicacion.get@
+Ubicacion.set/Bext.Reps.Domain.Entities.Tercero.Ubicacion.setH
+DatosContacto.get3Bext.Reps.Domain.Entities.Tercero.DatosContacto.getH
+DatosContacto.set3Bext.Reps.Domain.Entities.Tercero.DatosContacto.set

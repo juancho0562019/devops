@@ -1,0 +1,22 @@
+Í
+#Bext.Reps.Domain.Entities.Solicitud7Bext.Reps.Domain.Commons.Primitives.AggregateRoot<TKey>4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectD
+Solicitud(int)2Bext.Reps.Domain.Entities.Solicitud.Solicitud(int)ž
+;AddServicio(Bext.Reps.Domain.Entities.ServicioInscritoSede)_Bext.Reps.Domain.Entities.Solicitud.AddServicio(Bext.Reps.Domain.Entities.ServicioInscritoSede)ª
+AAddDocumentoServicio(Bext.Reps.Domain.Entities.DocumentoServicio)eBext.Reps.Domain.Entities.Solicitud.AddDocumentoServicio(Bext.Reps.Domain.Entities.DocumentoServicio)á
+\Solicitud(int, int, Bext.Reps.Domain.Commons.DefaultMessages.TipoSolicitud, System.DateTime)€Bext.Reps.Domain.Entities.Solicitud.Solicitud(int, int, Bext.Reps.Domain.Commons.DefaultMessages.TipoSolicitud, System.DateTime)B
+EntidadId.get1Bext.Reps.Domain.Entities.Solicitud.EntidadId.getB
+EntidadId.set1Bext.Reps.Domain.Entities.Solicitud.EntidadId.set>
+Entidad.get/Bext.Reps.Domain.Entities.Solicitud.Entidad.get>
+Entidad.set/Bext.Reps.Domain.Entities.Solicitud.Entidad.set:
+	Fecha.get-Bext.Reps.Domain.Entities.Solicitud.Fecha.get:
+	Fecha.set-Bext.Reps.Domain.Entities.Solicitud.Fecha.setJ
+TipoSolicitud.get5Bext.Reps.Domain.Entities.Solicitud.TipoSolicitud.getJ
+TipoSolicitud.set5Bext.Reps.Domain.Entities.Solicitud.TipoSolicitud.setN
+EstadoSolicitud.get7Bext.Reps.Domain.Entities.Solicitud.EstadoSolicitud.getN
+EstadoSolicitud.set7Bext.Reps.Domain.Entities.Solicitud.EstadoSolicitud.setX
+MovimientosSolicitud.get<Bext.Reps.Domain.Entities.Solicitud.MovimientosSolicitud.getX
+MovimientosSolicitud.set<Bext.Reps.Domain.Entities.Solicitud.MovimientosSolicitud.setB
+Servicios.get1Bext.Reps.Domain.Entities.Solicitud.Servicios.getB
+Servicios.set1Bext.Reps.Domain.Entities.Solicitud.Servicios.setD
+Documentos.get2Bext.Reps.Domain.Entities.Solicitud.Documentos.getD
+Documentos.set2Bext.Reps.Domain.Entities.Solicitud.Documentos.set

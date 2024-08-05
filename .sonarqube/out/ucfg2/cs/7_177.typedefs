@@ -1,0 +1,10 @@
+«
+&Bext.Reps.Domain.Entities.RefreshToken'Bext.Reps.Domain.Primitives.ValueObjectobjectY
+GetEqualityComponents()>Bext.Reps.Domain.Entities.RefreshToken.GetEqualityComponents()G
+RefreshToken()5Bext.Reps.Domain.Entities.RefreshToken.RefreshToken()=
+	Token.get0Bext.Reps.Domain.Entities.RefreshToken.Token.get=
+	Token.set0Bext.Reps.Domain.Entities.RefreshToken.Token.setM
+FechaCreacion.get8Bext.Reps.Domain.Entities.RefreshToken.FechaCreacion.getM
+FechaCreacion.set8Bext.Reps.Domain.Entities.RefreshToken.FechaCreacion.setG
+Expiracion.get5Bext.Reps.Domain.Entities.RefreshToken.Expiracion.getG
+Expiracion.set5Bext.Reps.Domain.Entities.RefreshToken.Expiracion.set

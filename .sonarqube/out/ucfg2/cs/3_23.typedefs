@@ -1,0 +1,13 @@
+ 
+-Bext.Reps.Domain.Entities.CaracterTerritorial4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobject\
+CaracterTerritorial()CBext.Reps.Domain.Entities.CaracterTerritorial.CaracterTerritorial()F
+
+Nombre.get8Bext.Reps.Domain.Entities.CaracterTerritorial.Nombre.getF
+
+Nombre.set8Bext.Reps.Domain.Entities.CaracterTerritorial.Nombre.setP
+Descripcion.get=Bext.Reps.Domain.Entities.CaracterTerritorial.Descripcion.getP
+Descripcion.set=Bext.Reps.Domain.Entities.CaracterTerritorial.Descripcion.setZ
+TipoNaturalezaId.getBBext.Reps.Domain.Entities.CaracterTerritorial.TipoNaturalezaId.getZ
+TipoNaturalezaId.setBBext.Reps.Domain.Entities.CaracterTerritorial.TipoNaturalezaId.setV
+TipoNaturaleza.get@Bext.Reps.Domain.Entities.CaracterTerritorial.TipoNaturaleza.getV
+TipoNaturaleza.set@Bext.Reps.Domain.Entities.CaracterTerritorial.TipoNaturaleza.set

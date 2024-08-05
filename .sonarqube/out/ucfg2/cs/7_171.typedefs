@@ -1,0 +1,17 @@
+Œ
+/Bext.Reps.Domain.Entities.PeriodoRepresentacion4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectb
+PeriodoRepresentacion()GBext.Reps.Domain.Entities.PeriodoRepresentacion.PeriodoRepresentacion()`
+TipoRepresentacion.getFBext.Reps.Domain.Entities.PeriodoRepresentacion.TipoRepresentacion.get`
+TipoRepresentacion.setFBext.Reps.Domain.Entities.PeriodoRepresentacion.TipoRepresentacion.setP
+ContactoId.get>Bext.Reps.Domain.Entities.PeriodoRepresentacion.ContactoId.getP
+ContactoId.set>Bext.Reps.Domain.Entities.PeriodoRepresentacion.ContactoId.setL
+Contacto.get<Bext.Reps.Domain.Entities.PeriodoRepresentacion.Contacto.getL
+Contacto.set<Bext.Reps.Domain.Entities.PeriodoRepresentacion.Contacto.setN
+EntidadId.get=Bext.Reps.Domain.Entities.PeriodoRepresentacion.EntidadId.getN
+EntidadId.set=Bext.Reps.Domain.Entities.PeriodoRepresentacion.EntidadId.setJ
+Entidad.get;Bext.Reps.Domain.Entities.PeriodoRepresentacion.Entidad.getJ
+Entidad.set;Bext.Reps.Domain.Entities.PeriodoRepresentacion.Entidad.setR
+FechaInicio.get?Bext.Reps.Domain.Entities.PeriodoRepresentacion.FechaInicio.getR
+FechaInicio.set?Bext.Reps.Domain.Entities.PeriodoRepresentacion.FechaInicio.setL
+FechaFin.get<Bext.Reps.Domain.Entities.PeriodoRepresentacion.FechaFin.getL
+FechaFin.set<Bext.Reps.Domain.Entities.PeriodoRepresentacion.FechaFin.set

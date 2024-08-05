@@ -1,0 +1,17 @@
+„	
+.Bext.Reps.Domain.Commons.ValueObjects.Contacto/Bext.Reps.Domain.Commons.Primitives.ValueObjectobjectG
+
+Validate()9Bext.Reps.Domain.Commons.ValueObjects.Contacto.Validate()a
+GetEqualityComponents()FBext.Reps.Domain.Commons.ValueObjects.Contacto.GetEqualityComponents()G
+
+Contacto()9Bext.Reps.Domain.Commons.ValueObjects.Contacto.Contacto()S
+TelefonoFijo.get?Bext.Reps.Domain.Commons.ValueObjects.Contacto.TelefonoFijo.getS
+TelefonoFijo.set?Bext.Reps.Domain.Commons.ValueObjects.Contacto.TelefonoFijo.setU
+TelefonoMovil.get@Bext.Reps.Domain.Commons.ValueObjects.Contacto.TelefonoMovil.getU
+TelefonoMovil.set@Bext.Reps.Domain.Commons.ValueObjects.Contacto.TelefonoMovil.setQ
+TelefonoFax.get>Bext.Reps.Domain.Commons.ValueObjects.Contacto.TelefonoFax.getQ
+TelefonoFax.set>Bext.Reps.Domain.Commons.ValueObjects.Contacto.TelefonoFax.setK
+SitioWeb.get;Bext.Reps.Domain.Commons.ValueObjects.Contacto.SitioWeb.getK
+SitioWeb.set;Bext.Reps.Domain.Commons.ValueObjects.Contacto.SitioWeb.setE
+	Email.get8Bext.Reps.Domain.Commons.ValueObjects.Contacto.Email.getE
+	Email.set8Bext.Reps.Domain.Commons.ValueObjects.Contacto.Email.set

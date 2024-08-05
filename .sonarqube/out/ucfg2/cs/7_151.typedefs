@@ -1,0 +1,17 @@
+·
+)Bext.Reps.Domain.ViewModel.TerceroRequestobjectN
+TerceroRequest():Bext.Reps.Domain.ViewModel.TerceroRequest.TerceroRequest()Z
+TipoIdentificacion.get@Bext.Reps.Domain.ViewModel.TerceroRequest.TipoIdentificacion.get\
+TipoIdentificacion.initABext.Reps.Domain.ViewModel.TerceroRequest.TipoIdentificacion.init^
+NumeroIdentificacion.getBBext.Reps.Domain.ViewModel.TerceroRequest.NumeroIdentificacion.get`
+NumeroIdentificacion.initCBext.Reps.Domain.ViewModel.TerceroRequest.NumeroIdentificacion.initB
+
+Nombre.get4Bext.Reps.Domain.ViewModel.TerceroRequest.Nombre.getD
+Nombre.init5Bext.Reps.Domain.ViewModel.TerceroRequest.Nombre.initH
+Direccion.get7Bext.Reps.Domain.ViewModel.TerceroRequest.Direccion.getJ
+Direccion.init8Bext.Reps.Domain.ViewModel.TerceroRequest.Direccion.initF
+Telefono.get6Bext.Reps.Domain.ViewModel.TerceroRequest.Telefono.getH
+Telefono.init7Bext.Reps.Domain.ViewModel.TerceroRequest.Telefono.init@
+	Email.get3Bext.Reps.Domain.ViewModel.TerceroRequest.Email.getB
+
+Email.init4Bext.Reps.Domain.ViewModel.TerceroRequest.Email.init

@@ -1,0 +1,9 @@
+×
+,Bext.Reps.Domain.Entities.DocumentoIdentidad,Bext.Reps.Domain.Primitives.BaseEntity<TKey>objectY
+DocumentoIdentidad()ABext.Reps.Domain.Entities.DocumentoIdentidad.DocumentoIdentidad()E
+
+Nombre.get7Bext.Reps.Domain.Entities.DocumentoIdentidad.Nombre.getE
+
+Nombre.set7Bext.Reps.Domain.Entities.DocumentoIdentidad.Nombre.setC
+	Sigla.get6Bext.Reps.Domain.Entities.DocumentoIdentidad.Sigla.getC
+	Sigla.set6Bext.Reps.Domain.Entities.DocumentoIdentidad.Sigla.set

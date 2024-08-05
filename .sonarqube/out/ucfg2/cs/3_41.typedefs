@@ -1,0 +1,17 @@
+Ù	
+;Bext.Reps.Domain.Entities.DirectorioGeneral.TablaReferenciaobjectb
+TablaReferencia()MBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.TablaReferencia()P
+Tref.getDBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.Tref.getP
+Tref.setDBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.Tref.setT
+
+Nombre.getFBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.Nombre.getT
+
+Nombre.setFBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.Nombre.set^
+Descripcion.getKBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.Descripcion.get^
+Descripcion.setKBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.Descripcion.set\
+Habilitado.getJBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.Habilitado.get\
+Habilitado.setJBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.Habilitado.set\
+LastUpdate.getJBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.LastUpdate.get\
+LastUpdate.setJBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.LastUpdate.setR
+	Items.getEBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.Items.getR
+	Items.setEBext.Reps.Domain.Entities.DirectorioGeneral.TablaReferencia.Items.set

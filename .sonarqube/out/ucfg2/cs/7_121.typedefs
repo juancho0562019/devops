@@ -1,0 +1,6 @@
+µ
+4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectQ
+BaseEntity()ABext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>.BaseEntity()Y
+BaseEntity(TKey)EBext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>.BaseEntity(TKey)E
+Id.get;Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>.Id.getG
+Id.init<Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>.Id.init

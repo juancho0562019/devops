@@ -1,0 +1,20 @@
+á
+,Bext.Reps.Domain.Entities.CapacidadInstalada4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectI
+Desactivar()9Bext.Reps.Domain.Entities.CapacidadInstalada.Desactivar()Y
+CapacidadInstalada()ABext.Reps.Domain.Entities.CapacidadInstalada.CapacidadInstalada()e
+ServicioInscritoSedeId.getGBext.Reps.Domain.Entities.CapacidadInstalada.ServicioInscritoSedeId.gete
+ServicioInscritoSedeId.setGBext.Reps.Domain.Entities.CapacidadInstalada.ServicioInscritoSedeId.seta
+ServicioInscritoSede.getEBext.Reps.Domain.Entities.CapacidadInstalada.ServicioInscritoSede.geta
+ServicioInscritoSede.setEBext.Reps.Domain.Entities.CapacidadInstalada.ServicioInscritoSede.setO
+TipoRecurso.get<Bext.Reps.Domain.Entities.CapacidadInstalada.TipoRecurso.getO
+TipoRecurso.set<Bext.Reps.Domain.Entities.CapacidadInstalada.TipoRecurso.setK
+Capacidad.get:Bext.Reps.Domain.Entities.CapacidadInstalada.Capacidad.getK
+Capacidad.set:Bext.Reps.Domain.Entities.CapacidadInstalada.Capacidad.setO
+FechaInicio.get<Bext.Reps.Domain.Entities.CapacidadInstalada.FechaInicio.getO
+FechaInicio.set<Bext.Reps.Domain.Entities.CapacidadInstalada.FechaInicio.setI
+FechaFin.get9Bext.Reps.Domain.Entities.CapacidadInstalada.FechaFin.getI
+FechaFin.set9Bext.Reps.Domain.Entities.CapacidadInstalada.FechaFin.setE
+
+Activo.get7Bext.Reps.Domain.Entities.CapacidadInstalada.Activo.getE
+
+Activo.set7Bext.Reps.Domain.Entities.CapacidadInstalada.Activo.set

@@ -1,0 +1,19 @@
+Ã	
+*Bext.Reps.Domain.ViewModel.TerceroResponseobjectQ
+TerceroResponse()<Bext.Reps.Domain.ViewModel.TerceroResponse.TerceroResponse();
+Id.get1Bext.Reps.Domain.ViewModel.TerceroResponse.Id.get=
+Id.init2Bext.Reps.Domain.ViewModel.TerceroResponse.Id.init[
+TipoIdentificacion.getABext.Reps.Domain.ViewModel.TerceroResponse.TipoIdentificacion.get]
+TipoIdentificacion.initBBext.Reps.Domain.ViewModel.TerceroResponse.TipoIdentificacion.init_
+NumeroIdentificacion.getCBext.Reps.Domain.ViewModel.TerceroResponse.NumeroIdentificacion.geta
+NumeroIdentificacion.initDBext.Reps.Domain.ViewModel.TerceroResponse.NumeroIdentificacion.initC
+
+Nombre.get5Bext.Reps.Domain.ViewModel.TerceroResponse.Nombre.getE
+Nombre.init6Bext.Reps.Domain.ViewModel.TerceroResponse.Nombre.initI
+Direccion.get8Bext.Reps.Domain.ViewModel.TerceroResponse.Direccion.getK
+Direccion.init9Bext.Reps.Domain.ViewModel.TerceroResponse.Direccion.initG
+Telefono.get7Bext.Reps.Domain.ViewModel.TerceroResponse.Telefono.getI
+Telefono.init8Bext.Reps.Domain.ViewModel.TerceroResponse.Telefono.initA
+	Email.get4Bext.Reps.Domain.ViewModel.TerceroResponse.Email.getC
+
+Email.init5Bext.Reps.Domain.ViewModel.TerceroResponse.Email.init

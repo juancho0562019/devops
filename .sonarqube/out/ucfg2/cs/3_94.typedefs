@@ -1,0 +1,9 @@
+ 
+%Bext.Reps.Domain.Entities.TipoPersona4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectD
+TipoPersona()3Bext.Reps.Domain.Entities.TipoPersona.TipoPersona()>
+
+Nombre.get0Bext.Reps.Domain.Entities.TipoPersona.Nombre.get>
+
+Nombre.set0Bext.Reps.Domain.Entities.TipoPersona.Nombre.set\
+RequiereRepresentante.get?Bext.Reps.Domain.Entities.TipoPersona.RequiereRepresentante.get\
+RequiereRepresentante.set?Bext.Reps.Domain.Entities.TipoPersona.RequiereRepresentante.set

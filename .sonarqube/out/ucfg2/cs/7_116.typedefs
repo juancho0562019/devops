@@ -1,0 +1,6 @@
+²
+'Bext.Reps.Domain.Primitives.ValueObjectobjectSystem.IEquatable<T>J
+Equals(object?)7Bext.Reps.Domain.Primitives.ValueObject.Equals(object?)Œ
+0Equals(Bext.Reps.Domain.Primitives.ValueObject?)XBext.Reps.Domain.Primitives.ValueObject.Equals(Bext.Reps.Domain.Primitives.ValueObject?)F
+GetHashCode()5Bext.Reps.Domain.Primitives.ValueObject.GetHashCode()F
+ValueObject()5Bext.Reps.Domain.Primitives.ValueObject.ValueObject()

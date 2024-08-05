@@ -1,0 +1,13 @@
+ˆ
+/Bext.Reps.Domain.Commons.Abstracts.Persona<TId>4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectF
+	Persona()9Bext.Reps.Domain.Commons.Abstracts.Persona<TId>.Persona()X
+Identificacion.getBBext.Reps.Domain.Commons.Abstracts.Persona<TId>.Identificacion.getX
+Identificacion.setBBext.Reps.Domain.Commons.Abstracts.Persona<TId>.Identificacion.setH
+
+Nombre.get:Bext.Reps.Domain.Commons.Abstracts.Persona<TId>.Nombre.getH
+
+Nombre.set:Bext.Reps.Domain.Commons.Abstracts.Persona<TId>.Nombre.setN
+Ubicacion.get=Bext.Reps.Domain.Commons.Abstracts.Persona<TId>.Ubicacion.getN
+Ubicacion.set=Bext.Reps.Domain.Commons.Abstracts.Persona<TId>.Ubicacion.setV
+DatosContacto.getABext.Reps.Domain.Commons.Abstracts.Persona<TId>.DatosContacto.getV
+DatosContacto.setABext.Reps.Domain.Commons.Abstracts.Persona<TId>.DatosContacto.set

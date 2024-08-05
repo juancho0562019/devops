@@ -1,0 +1,11 @@
+Ç
++Bext.Reps.Domain.Entities.DocumentoServicio3Bext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectV
+DocumentoServicio()?Bext.Reps.Domain.Entities.DocumentoServicio.DocumentoServicio()N
+SolicitudId.get;Bext.Reps.Domain.Entities.DocumentoServicio.SolicitudId.getN
+SolicitudId.set;Bext.Reps.Domain.Entities.DocumentoServicio.SolicitudId.setJ
+Solicitud.get9Bext.Reps.Domain.Entities.DocumentoServicio.Solicitud.getL
+Solicitud.init:Bext.Reps.Domain.Entities.DocumentoServicio.Solicitud.initR
+TipoDocumento.get=Bext.Reps.Domain.Entities.DocumentoServicio.TipoDocumento.getT
+TipoDocumento.init>Bext.Reps.Domain.Entities.DocumentoServicio.TipoDocumento.initV
+TipoDocumentoId.get?Bext.Reps.Domain.Entities.DocumentoServicio.TipoDocumentoId.getX
+TipoDocumentoId.init@Bext.Reps.Domain.Entities.DocumentoServicio.TipoDocumentoId.init

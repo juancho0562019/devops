@@ -1,0 +1,14 @@
+Ð
+)Bext.Reps.Domain.Entities.ContactoEntidad4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectP
+ContactoEntidad();Bext.Reps.Domain.Entities.ContactoEntidad.ContactoEntidad()B
+
+Nombre.get4Bext.Reps.Domain.Entities.ContactoEntidad.Nombre.getD
+Nombre.init5Bext.Reps.Domain.Entities.ContactoEntidad.Nombre.initR
+Identificacion.get<Bext.Reps.Domain.Entities.ContactoEntidad.Identificacion.getT
+Identificacion.init=Bext.Reps.Domain.Entities.ContactoEntidad.Identificacion.initX
+TipoVinculacionId.get?Bext.Reps.Domain.Entities.ContactoEntidad.TipoVinculacionId.getX
+TipoVinculacionId.set?Bext.Reps.Domain.Entities.ContactoEntidad.TipoVinculacionId.setT
+TipoVinculacion.get=Bext.Reps.Domain.Entities.ContactoEntidad.TipoVinculacion.getT
+TipoVinculacion.set=Bext.Reps.Domain.Entities.ContactoEntidad.TipoVinculacion.setb
+PeriodosRepresentacion.getDBext.Reps.Domain.Entities.ContactoEntidad.PeriodosRepresentacion.getb
+PeriodosRepresentacion.setDBext.Reps.Domain.Entities.ContactoEntidad.PeriodosRepresentacion.set

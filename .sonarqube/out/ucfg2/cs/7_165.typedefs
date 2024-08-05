@@ -1,0 +1,13 @@
+¨
+'Bext.Reps.Domain.Entities.GrupoServicio4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectJ
+GrupoServicio()7Bext.Reps.Domain.Entities.GrupoServicio.GrupoServicio()J
+ModalidadId.get7Bext.Reps.Domain.Entities.GrupoServicio.ModalidadId.getJ
+ModalidadId.set7Bext.Reps.Domain.Entities.GrupoServicio.ModalidadId.setF
+Modalidad.get5Bext.Reps.Domain.Entities.GrupoServicio.Modalidad.getF
+Modalidad.set5Bext.Reps.Domain.Entities.GrupoServicio.Modalidad.set@
+
+Nombre.get2Bext.Reps.Domain.Entities.GrupoServicio.Nombre.get@
+
+Nombre.set2Bext.Reps.Domain.Entities.GrupoServicio.Nombre.setF
+Servicios.get5Bext.Reps.Domain.Entities.GrupoServicio.Servicios.getF
+Servicios.set5Bext.Reps.Domain.Entities.GrupoServicio.Servicios.set

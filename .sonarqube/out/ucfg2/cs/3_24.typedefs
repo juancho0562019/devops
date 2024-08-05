@@ -1,0 +1,12 @@
+º
+,Bext.Reps.Domain.Primitives.BaseEntity<TKey>objectSystem.IEquatable<T>I
+BaseEntity()9Bext.Reps.Domain.Primitives.BaseEntity<TKey>.BaseEntity()Q
+BaseEntity(TKey)=Bext.Reps.Domain.Primitives.BaseEntity<TKey>.BaseEntity(TKey)›
+5Equals(Bext.Reps.Domain.Primitives.BaseEntity<TKey>?)bBext.Reps.Domain.Primitives.BaseEntity<TKey>.Equals(Bext.Reps.Domain.Primitives.BaseEntity<TKey>?)O
+Equals(object?)<Bext.Reps.Domain.Primitives.BaseEntity<TKey>.Equals(object?)K
+IsTransient():Bext.Reps.Domain.Primitives.BaseEntity<TKey>.IsTransient()K
+GetHashCode():Bext.Reps.Domain.Primitives.BaseEntity<TKey>.GetHashCode()E
+
+ToString()7Bext.Reps.Domain.Primitives.BaseEntity<TKey>.ToString()=
+Id.get3Bext.Reps.Domain.Primitives.BaseEntity<TKey>.Id.get?
+Id.init4Bext.Reps.Domain.Primitives.BaseEntity<TKey>.Id.init

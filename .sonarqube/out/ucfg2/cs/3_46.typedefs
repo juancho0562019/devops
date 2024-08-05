@@ -1,0 +1,17 @@
+ó
+#Bext.Reps.Domain.Entities.Documento,Bext.Reps.Domain.Primitives.BaseEntity<TKey>object>
+Documento()/Bext.Reps.Domain.Entities.Documento.Documento():
+	Fecha.get-Bext.Reps.Domain.Entities.Documento.Fecha.get<
+
+Fecha.init.Bext.Reps.Domain.Entities.Documento.Fecha.init8
+Link.get,Bext.Reps.Domain.Entities.Documento.Link.get:
+	Link.init-Bext.Reps.Domain.Entities.Documento.Link.init<
+
+Nombre.get.Bext.Reps.Domain.Entities.Documento.Nombre.get>
+Nombre.init/Bext.Reps.Domain.Entities.Documento.Nombre.initF
+Descripcion.get3Bext.Reps.Domain.Entities.Documento.Descripcion.getH
+Descripcion.init4Bext.Reps.Domain.Entities.Documento.Descripcion.initV
+RegistroModalidadId.get;Bext.Reps.Domain.Entities.Documento.RegistroModalidadId.getV
+RegistroModalidadId.set;Bext.Reps.Domain.Entities.Documento.RegistroModalidadId.setR
+RegistroModalidad.get9Bext.Reps.Domain.Entities.Documento.RegistroModalidad.getR
+RegistroModalidad.set9Bext.Reps.Domain.Entities.Documento.RegistroModalidad.set

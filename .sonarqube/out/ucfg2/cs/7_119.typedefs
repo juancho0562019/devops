@@ -1,0 +1,13 @@
+ý
+7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectf
+BaseAuditableEntity()MBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.BaseAuditableEntity()T
+Creacion.getDBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.Creacion.getT
+Creacion.setDBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.Creacion.setV
+CreadoPor.getEBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.CreadoPor.getV
+CreadoPor.setEBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.CreadoPor.seth
+UltimaModificacion.getNBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.UltimaModificacion.geth
+UltimaModificacion.setNBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.UltimaModificacion.setn
+UltimaModificacionPor.getQBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.UltimaModificacionPor.getn
+UltimaModificacionPor.setQBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.UltimaModificacionPor.set`
+EstadoRegistro.getJBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.EstadoRegistro.get`
+EstadoRegistro.setJBext.Reps.Domain.Commons.Primitives.BaseAuditableEntity.EstadoRegistro.set

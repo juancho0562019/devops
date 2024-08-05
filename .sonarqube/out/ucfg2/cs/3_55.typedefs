@@ -1,0 +1,11 @@
+ô
+-Bext.Reps.Domain.Entities.EstandarPorServicio4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobject\
+EstandarPorServicio()CBext.Reps.Domain.Entities.EstandarPorServicio.EstandarPorServicio()N
+EstandarId.get<Bext.Reps.Domain.Entities.EstandarPorServicio.EstandarId.getN
+EstandarId.set<Bext.Reps.Domain.Entities.EstandarPorServicio.EstandarId.setJ
+Estandar.get:Bext.Reps.Domain.Entities.EstandarPorServicio.Estandar.getJ
+Estandar.set:Bext.Reps.Domain.Entities.EstandarPorServicio.Estandar.setN
+ServicioId.get<Bext.Reps.Domain.Entities.EstandarPorServicio.ServicioId.getN
+ServicioId.set<Bext.Reps.Domain.Entities.EstandarPorServicio.ServicioId.setJ
+Servicio.get:Bext.Reps.Domain.Entities.EstandarPorServicio.Servicio.getJ
+Servicio.set:Bext.Reps.Domain.Entities.EstandarPorServicio.Servicio.set

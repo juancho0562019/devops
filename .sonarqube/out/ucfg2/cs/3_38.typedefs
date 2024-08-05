@@ -1,0 +1,12 @@
+²
+'Bext.Reps.Domain.ValueObjects.Ubicacion'Bext.Reps.Domain.Primitives.ValueObjectobjectZ
+GetEqualityComponents()?Bext.Reps.Domain.ValueObjects.Ubicacion.GetEqualityComponents()B
+Ubicacion()3Bext.Reps.Domain.ValueObjects.Ubicacion.Ubicacion()<
+Pais.get0Bext.Reps.Domain.ValueObjects.Ubicacion.Pais.get<
+Pais.set0Bext.Reps.Domain.ValueObjects.Ubicacion.Pais.setL
+Departamento.get8Bext.Reps.Domain.ValueObjects.Ubicacion.Departamento.getL
+Departamento.set8Bext.Reps.Domain.ValueObjects.Ubicacion.Departamento.setF
+Municipio.get5Bext.Reps.Domain.ValueObjects.Ubicacion.Municipio.getF
+Municipio.set5Bext.Reps.Domain.ValueObjects.Ubicacion.Municipio.setF
+Direccion.get5Bext.Reps.Domain.ValueObjects.Ubicacion.Direccion.getF
+Direccion.set5Bext.Reps.Domain.ValueObjects.Ubicacion.Direccion.set

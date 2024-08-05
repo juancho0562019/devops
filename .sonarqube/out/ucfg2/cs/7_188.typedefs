@@ -1,0 +1,13 @@
+´
++Bext.Reps.Domain.Entities.SubTipoNaturaleza4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectV
+SubTipoNaturaleza()?Bext.Reps.Domain.Entities.SubTipoNaturaleza.SubTipoNaturaleza()D
+
+Nombre.get6Bext.Reps.Domain.Entities.SubTipoNaturaleza.Nombre.getD
+
+Nombre.set6Bext.Reps.Domain.Entities.SubTipoNaturaleza.Nombre.setX
+TipoNaturalezaId.get@Bext.Reps.Domain.Entities.SubTipoNaturaleza.TipoNaturalezaId.getX
+TipoNaturalezaId.set@Bext.Reps.Domain.Entities.SubTipoNaturaleza.TipoNaturalezaId.setT
+TipoNaturaleza.get>Bext.Reps.Domain.Entities.SubTipoNaturaleza.TipoNaturaleza.getT
+TipoNaturaleza.set>Bext.Reps.Domain.Entities.SubTipoNaturaleza.TipoNaturaleza.setd
+DocumentosConstitucion.getFBext.Reps.Domain.Entities.SubTipoNaturaleza.DocumentosConstitucion.getd
+DocumentosConstitucion.setFBext.Reps.Domain.Entities.SubTipoNaturaleza.DocumentosConstitucion.set

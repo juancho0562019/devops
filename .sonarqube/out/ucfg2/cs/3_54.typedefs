@@ -1,0 +1,11 @@
+©
+*Bext.Reps.Domain.Entities.DocumentoEntidad3Bext.Reps.Domain.Commons.Abstracts.ADocumento<TKey>4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectS
+DocumentoEntidad()=Bext.Reps.Domain.Entities.DocumentoEntidad.DocumentoEntidad()Q
+TipoDocumento.get<Bext.Reps.Domain.Entities.DocumentoEntidad.TipoDocumento.getS
+TipoDocumento.init=Bext.Reps.Domain.Entities.DocumentoEntidad.TipoDocumento.initU
+TipoDocumentoId.get>Bext.Reps.Domain.Entities.DocumentoEntidad.TipoDocumentoId.getW
+TipoDocumentoId.init?Bext.Reps.Domain.Entities.DocumentoEntidad.TipoDocumentoId.initI
+EntidadId.get8Bext.Reps.Domain.Entities.DocumentoEntidad.EntidadId.getI
+EntidadId.set8Bext.Reps.Domain.Entities.DocumentoEntidad.EntidadId.setE
+Entidad.get6Bext.Reps.Domain.Entities.DocumentoEntidad.Entidad.getE
+Entidad.set6Bext.Reps.Domain.Entities.DocumentoEntidad.Entidad.set

@@ -1,0 +1,13 @@
+¸
+'Bext.Reps.Domain.Entities.FranjaHoraria4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectJ
+FranjaHoraria()7Bext.Reps.Domain.Entities.FranjaHoraria.FranjaHoraria()`
+ServicioInscritoSedeId.getBBext.Reps.Domain.Entities.FranjaHoraria.ServicioInscritoSedeId.get`
+ServicioInscritoSedeId.setBBext.Reps.Domain.Entities.FranjaHoraria.ServicioInscritoSedeId.setL
+HoraApertura.get8Bext.Reps.Domain.Entities.FranjaHoraria.HoraApertura.getL
+HoraApertura.set8Bext.Reps.Domain.Entities.FranjaHoraria.HoraApertura.setH
+HoraCierre.get6Bext.Reps.Domain.Entities.FranjaHoraria.HoraCierre.getH
+HoraCierre.set6Bext.Reps.Domain.Entities.FranjaHoraria.HoraCierre.set\
+ServicioInscritoSede.get@Bext.Reps.Domain.Entities.FranjaHoraria.ServicioInscritoSede.get\
+ServicioInscritoSede.set@Bext.Reps.Domain.Entities.FranjaHoraria.ServicioInscritoSede.setL
+DiasAtencion.get8Bext.Reps.Domain.Entities.FranjaHoraria.DiasAtencion.getL
+DiasAtencion.set8Bext.Reps.Domain.Entities.FranjaHoraria.DiasAtencion.set

@@ -1,0 +1,16 @@
+¤	
+,Bext.Reps.Domain.Commons.ValueObjects.Nombre/Bext.Reps.Domain.Commons.Primitives.ValueObjectobjectA
+Nombre()5Bext.Reps.Domain.Commons.ValueObjects.Nombre.Nombre()E
+
+Validate()7Bext.Reps.Domain.Commons.ValueObjects.Nombre.Validate()_
+GetEqualityComponents()DBext.Reps.Domain.Commons.ValueObjects.Nombre.GetEqualityComponents()Q
+PrimerNombre.get=Bext.Reps.Domain.Commons.ValueObjects.Nombre.PrimerNombre.getQ
+PrimerNombre.set=Bext.Reps.Domain.Commons.ValueObjects.Nombre.PrimerNombre.setU
+PrimerApellido.get?Bext.Reps.Domain.Commons.ValueObjects.Nombre.PrimerApellido.getU
+PrimerApellido.set?Bext.Reps.Domain.Commons.ValueObjects.Nombre.PrimerApellido.setS
+SegundoNombre.get>Bext.Reps.Domain.Commons.ValueObjects.Nombre.SegundoNombre.getS
+SegundoNombre.set>Bext.Reps.Domain.Commons.ValueObjects.Nombre.SegundoNombre.setW
+SegundoApellido.get@Bext.Reps.Domain.Commons.ValueObjects.Nombre.SegundoApellido.getW
+SegundoApellido.set@Bext.Reps.Domain.Commons.ValueObjects.Nombre.SegundoApellido.setO
+RazonSocial.get<Bext.Reps.Domain.Commons.ValueObjects.Nombre.RazonSocial.getO
+RazonSocial.set<Bext.Reps.Domain.Commons.ValueObjects.Nombre.RazonSocial.set

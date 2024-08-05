@@ -1,0 +1,12 @@
+È
+2Bext.Reps.Domain.Entities.ActaConstitucion.BuilderobjectI
+	Builder()<Bext.Reps.Domain.Entities.ActaConstitucion.Builder.Builder()u
+ConCaracterTerritorial(string?)RBext.Reps.Domain.Entities.ActaConstitucion.Builder.ConCaracterTerritorial(string?)c
+ConNivelAtencion(int?)IBext.Reps.Domain.Entities.ActaConstitucion.Builder.ConNivelAtencion(int?)u
+ConEmpresaSocialEstado(string?)RBext.Reps.Domain.Entities.ActaConstitucion.Builder.ConEmpresaSocialEstado(string?)o
+ConActoConstitucion(string?)OBext.Reps.Domain.Entities.ActaConstitucion.Builder.ConActoConstitucion(string?)c
+ConNumeroActo(string?)IBext.Reps.Domain.Entities.ActaConstitucion.Builder.ConNumeroActo(string?)s
+ConFechaActo(System.DateTime?)QBext.Reps.Domain.Entities.ActaConstitucion.Builder.ConFechaActo(System.DateTime?)i
+ConEntidadExpide(string?)LBext.Reps.Domain.Entities.ActaConstitucion.Builder.ConEntidadExpide(string?)o
+ConCiudadExpedicion(string?)OBext.Reps.Domain.Entities.ActaConstitucion.Builder.ConCiudadExpedicion(string?)E
+Build():Bext.Reps.Domain.Entities.ActaConstitucion.Builder.Build()

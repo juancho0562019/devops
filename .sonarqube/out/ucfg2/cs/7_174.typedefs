@@ -1,0 +1,7 @@
+ì
+7Bext.Reps.Domain.Entities.PeriodoRepresentacion.Builderobject”
+,ConNombres(string, string?, string, string?)dBext.Reps.Domain.Entities.PeriodoRepresentacion.Builder.ConNombres(string, string?, string, string?)~
+!ConIdentificacion(string, string)YBext.Reps.Domain.Entities.PeriodoRepresentacion.Builder.ConIdentificacion(string, string)õ
+\ConPeriodoRepresentacion(Bext.Reps.Domain.Commons.Enums.TipoRepresentacion, System.DateTime)”Bext.Reps.Domain.Entities.PeriodoRepresentacion.Builder.ConPeriodoRepresentacion(Bext.Reps.Domain.Commons.Enums.TipoRepresentacion, System.DateTime)J
+Build()?Bext.Reps.Domain.Entities.PeriodoRepresentacion.Builder.Build()N
+	Builder()ABext.Reps.Domain.Entities.PeriodoRepresentacion.Builder.Builder()

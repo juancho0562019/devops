@@ -1,0 +1,13 @@
+¯
+&Bext.Reps.Domain.Entities.Sede.BuilderobjectS
+ConEsPrincipal(bool);Bext.Reps.Domain.Entities.Sede.Builder.ConEsPrincipal(bool)M
+ConNombre(string)8Bext.Reps.Domain.Entities.Sede.Builder.ConNombre(string)c
+ConNombreResponsable(string)CBext.Reps.Domain.Entities.Sede.Builder.ConNombreResponsable(string)¥
+=ConUbicacion(Bext.Reps.Domain.Commons.ValueObjects.Ubicacion)dBext.Reps.Domain.Entities.Sede.Builder.ConUbicacion(Bext.Reps.Domain.Commons.ValueObjects.Ubicacion)‰
+/ConContacto(Bext.Reps.Domain.Entities.Contacto)VBext.Reps.Domain.Entities.Sede.Builder.ConContacto(Bext.Reps.Domain.Entities.Contacto)I
+ConZona(string)6Bext.Reps.Domain.Entities.Sede.Builder.ConZona(string)]
+ConCentroPoblado(string?)@Bext.Reps.Domain.Entities.Sede.Builder.ConCentroPoblado(string?)M
+ConBarrio(string)8Bext.Reps.Domain.Entities.Sede.Builder.ConBarrio(string)M
+ConEntidadId(int)8Bext.Reps.Domain.Entities.Sede.Builder.ConEntidadId(int)9
+Build().Bext.Reps.Domain.Entities.Sede.Builder.Build()=
+	Builder()0Bext.Reps.Domain.Entities.Sede.Builder.Builder()

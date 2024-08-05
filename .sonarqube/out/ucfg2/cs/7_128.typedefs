@@ -1,0 +1,10 @@
+•
+4Bext.Reps.Domain.Commons.ValueObjects.Identificacion/Bext.Reps.Domain.Commons.Primitives.ValueObjectobjectg
+GetEqualityComponents()LBext.Reps.Domain.Commons.ValueObjects.Identificacion.GetEqualityComponents()Y
+Identificacion()EBext.Reps.Domain.Commons.ValueObjects.Identificacion.Identificacion()e
+TipoIdentificacion.getKBext.Reps.Domain.Commons.ValueObjects.Identificacion.TipoIdentificacion.getg
+TipoIdentificacion.initLBext.Reps.Domain.Commons.ValueObjects.Identificacion.TipoIdentificacion.init_
+NumeroDocumento.getHBext.Reps.Domain.Commons.ValueObjects.Identificacion.NumeroDocumento.geta
+NumeroDocumento.initIBext.Reps.Domain.Commons.ValueObjects.Identificacion.NumeroDocumento.inite
+DigitoVerificacion.getKBext.Reps.Domain.Commons.ValueObjects.Identificacion.DigitoVerificacion.gete
+DigitoVerificacion.setKBext.Reps.Domain.Commons.ValueObjects.Identificacion.DigitoVerificacion.set

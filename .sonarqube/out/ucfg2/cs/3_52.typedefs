@@ -1,0 +1,9 @@
+°
+%Bext.Reps.Domain.Entities.DiaAtencion4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectD
+DiaAtencion()3Bext.Reps.Domain.Entities.DiaAtencion.DiaAtencion()P
+FranjaHorariaId.get9Bext.Reps.Domain.Entities.DiaAtencion.FranjaHorariaId.getP
+FranjaHorariaId.set9Bext.Reps.Domain.Entities.DiaAtencion.FranjaHorariaId.setD
+DiaSemana.get3Bext.Reps.Domain.Entities.DiaAtencion.DiaSemana.getD
+DiaSemana.set3Bext.Reps.Domain.Entities.DiaAtencion.DiaSemana.setL
+FranjaHoraria.get7Bext.Reps.Domain.Entities.DiaAtencion.FranjaHoraria.getL
+FranjaHoraria.set7Bext.Reps.Domain.Entities.DiaAtencion.FranjaHoraria.set

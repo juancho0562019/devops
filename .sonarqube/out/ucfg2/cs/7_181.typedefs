@@ -1,0 +1,7 @@
+¡
+)Bext.Reps.Domain.Entities.Tercero.Builderobject¸
+EBuilder(string, Bext.Reps.Domain.Commons.ValueObjects.Identificacion)oBext.Reps.Domain.Entities.Tercero.Builder.Builder(string, Bext.Reps.Domain.Commons.ValueObjects.Identificacion)œ
+7ConNombres(string?, string?, string?, string?, string?)aBext.Reps.Domain.Entities.Tercero.Builder.ConNombres(string?, string?, string?, string?, string?)¨
+=ConUbicacion(Bext.Reps.Domain.Commons.ValueObjects.Ubicacion)gBext.Reps.Domain.Entities.Tercero.Builder.ConUbicacion(Bext.Reps.Domain.Commons.ValueObjects.Ubicacion)¨
+=ConDatosContacto(string?, string?, string?, string?, string?)gBext.Reps.Domain.Entities.Tercero.Builder.ConDatosContacto(string?, string?, string?, string?, string?)<
+Build()1Bext.Reps.Domain.Entities.Tercero.Builder.Build()

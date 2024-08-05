@@ -1,0 +1,11 @@
+…	
+>Bext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede4Bext.Reps.Domain.Commons.Primitives.BaseEntity<TKey>7Bext.Reps.Domain.Commons.Primitives.BaseAuditableEntityobjectè
+&EspecificidadPorServicioInscritoSede()eBext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede.EspecificidadPorServicioInscritoSede()i
+EspecificidadId.getRBext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede.EspecificidadId.geti
+EspecificidadId.setRBext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede.EspecificidadId.sete
+Especificidad.getPBext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede.Especificidad.gete
+Especificidad.setPBext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede.Especificidad.setw
+ServicioInscritoSedeId.getYBext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede.ServicioInscritoSedeId.getw
+ServicioInscritoSedeId.setYBext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede.ServicioInscritoSedeId.sets
+ServicioInscritoSede.getWBext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede.ServicioInscritoSede.gets
+ServicioInscritoSede.setWBext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede.ServicioInscritoSede.set

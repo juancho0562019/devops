@@ -1,0 +1,10 @@
+ß
+'Bext.Reps.Domain.Entities.RolAplicacion,Bext.Reps.Domain.Primitives.BaseEntity<TKey>objectJ
+RolAplicacion()7Bext.Reps.Domain.Entities.RolAplicacion.RolAplicacion()@
+
+Nombre.get2Bext.Reps.Domain.Entities.RolAplicacion.Nombre.getB
+Nombre.init3Bext.Reps.Domain.Entities.RolAplicacion.Nombre.initF
+EsInterno.get5Bext.Reps.Domain.Entities.RolAplicacion.EsInterno.getH
+EsInterno.init6Bext.Reps.Domain.Entities.RolAplicacion.EsInterno.initL
+Funcionarios.get8Bext.Reps.Domain.Entities.RolAplicacion.Funcionarios.getL
+Funcionarios.set8Bext.Reps.Domain.Entities.RolAplicacion.Funcionarios.set
