@@ -11,20 +11,40 @@ public class ConfiguracionSede : IEntityTypeConfiguration<Sede>
         builder.ToTable(@"Sedes");
         builder.Property(x => x.Id).HasColumnName(@"Id").IsRequired().ValueGeneratedOnAdd();
         builder.Property(x => x.Nombre).HasColumnName(@"Nombre").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        builder.Property(x => x.MatriculaMercantil).HasColumnName(@"MatriculaMercantil").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        builder.Property(x => x.CodigoSede).HasColumnName(@"CodigoSede").IsRequired().ValueGeneratedNever().HasMaxLength(50);
+        
         builder.ComplexProperty(x => x.Ubicacion, t =>
         {
             t.IsRequired();
-            t.Property(x => x.Pais).HasColumnName(@"Pais").IsRequired().ValueGeneratedNever().HasMaxLength(50);
             t.Property(x => x.Departamento).HasColumnName(@"Departamento").IsRequired().ValueGeneratedNever().HasMaxLength(50);
             t.Property(x => x.Municipio).HasColumnName(@"Municipio").IsRequired().ValueGeneratedNever().HasMaxLength(50);
         });
+        builder.ComplexProperty(x => x.DatosContacto, t =>
+        {
+            t.IsRequired();
 
-        builder.Property(x => x.DireccionNotificacionJudicial).HasColumnName(@"DireccionNotificacionJudicial").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        builder.Property(x => x.CorreoElectronico).HasColumnName(@"CorreoElectronico").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        builder.Property(x => x.Telefono).HasColumnName(@"Telefono").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        builder.Property(x => x.RegistroMercantil).HasColumnName(@"RegistroMercantil").IsRequired().ValueGeneratedNever().HasMaxLength(50);
+            t.Property(x => x.Email)
+                .HasColumnName(@"Email")
+                .IsRequired()
+                .HasMaxLength(250);
+
+            t.Property(x => x.TelefonoFijo)
+                .HasColumnName(@"TelefonoFijo")
+                .HasMaxLength(15);
+
+            t.Property(x => x.TelefonoMovil)
+                .HasColumnName(@"TelefonoMovil")
+                .IsRequired()
+                .HasMaxLength(15);
+
+            t.Property(x => x.TelefonoFax)
+                .HasColumnName(@"TelefonoFax")
+                .HasMaxLength(15);
+
+            t.Property(x => x.SitioWeb)
+                .HasColumnName(@"SitioWeb")
+                .HasMaxLength(250);
+        });
+
         builder.Property(x => x.EntidadId).HasColumnName(@"EntidadId").ValueGeneratedNever();
         builder.HasKey(@"Id");
         

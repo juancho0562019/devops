@@ -40,6 +40,8 @@ public static class DefaultMessage
     public const string MaxDateMinDate = "La fecha fin no debe ser menor a la fecha inicial.";
     public const string IsEnum = "No es un valor del enumerador.";
 
+    public const string IsValidPhone = @"^\+?[1-9]\d{1,14}$";
+
     public static string NotFoundMessage(string entidad)
     {
         return $"No existe {entidad} con los datos ingresados.";

@@ -1,9 +1,13 @@
 version: "3.8"
 
+networks:
+  my_network:
+    driver: bridge
+
 services:
-  sqlserver:
+  sqlserver1:
     image: mcr.microsoft.com/mssql/server:2019-latest
-    container_name: sqlserver
+    container_name: sqlserver1
     environment:
       SA_PASSWORD: "Password@123"
       ACCEPT_EULA: "Y"
@@ -11,19 +15,50 @@ services:
       - "1433:1433"
     volumes:
       - sqlserverdata:/var/opt/mssql
+    networks:
+      - my_network
+
+  api_directorio:
+    build:
+      context: .
+      dockerfile: Dockerfile.directoriogeneral
+    container_name: directoriogeneral
+    volumes:
+      - ./DirectorioGeneral_Code/DirectorioGeneral.Api/sisprodesa:/app/sisprodesa
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ConnectionStrings__DBConnectionString: "Server=sqlserver1;Database=master;User=sa;Password=Password@123; MultipleActiveResultSets=True;TrustServerCertificate=True"
+    extra_hosts:
+      - "devweb.sisprodesa.local:127.0.0.1"
+    ports:
+      - "5000:5000"
+    expose:
+      - "5000"
+    depends_on:
+      - sqlserver1
+    networks:
+      - my_network
 
   api:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: bext_reps_api
+    volumes:
+      - ./src/my_packages:/src/my_packages
+      - ./src/sisprodesa:/app/sisprodesa
     environment:
       ASPNETCORE_ENVIRONMENT: "Development"
-      ConnectionStrings__RepsConnectionString: "Server=sqlserver;Database=bext_reps_api;User=sa;Password=Password@123;"
+      ConnectionStrings__RepsConnectionString: "Server=sqlserver1;Database=bext_reps_api;User=sa;Password=Password@123; MultipleActiveResultSets=True;TrustServerCertificate=True"
+    extra_hosts:
+      - "devweb.sisprodesa.local:127.0.0.1"
     ports:
-      - "5000:5000"
+      - "9000:9000"
     depends_on:
-      - sqlserver
+      - sqlserver1
+      - api_directorio
+    networks:
+      - my_network
 
 volumes:
   sqlserverdata:

@@ -27,47 +27,221 @@ namespace Bext.Reps.Infrastructure.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ActoConstitucion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("ActoConstitucionId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CaracterTerritorial")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("CaracterTerritorialId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CiudadExpedicion")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("CiudadExpedicion");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EmpresaSocialEstado")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("EmpresaSocialEstado");
 
                     b.Property<string>("EntidadExpide")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("EntidadExpide");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("FechaActo")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("FechaActo");
 
-                    b.Property<string>("NivelAtencion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("NivelAtencionId")
+                        .HasColumnType("int");
 
                     b.Property<string>("NumeroActo")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("NumeroActo");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ActaConstitucion");
+                    b.HasIndex("ActoConstitucionId");
+
+                    b.HasIndex("CaracterTerritorialId");
+
+                    b.HasIndex("NivelAtencionId");
+
+                    b.ToTable("ActasConstitucion", (string)null);
                 });
 
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.Contacto", b =>
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.CapacidadInstalada", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("Activo")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Capacidad")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("FechaFin")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ServicioInscritoSedeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TipoRecurso")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServicioInscritoSedeId", "TipoRecurso", "Activo")
+                        .HasDatabaseName("IX_CapacidadesInstaladas_ServicioInscritoSede_TipoRecurso_Activo");
+
+                    b.ToTable("CapacidadInstalada");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.CaracterTerritorial", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("TipoNaturalezaId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(2)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TipoNaturalezaId");
+
+                    b.ToTable("CaracteresTerritoriales");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.ClasePrestador", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ClasesPrestador");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Complejidad", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nivel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Complejidades");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.ContactoEntidad", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -76,121 +250,236 @@ namespace Bext.Reps.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CorreoInstitucional")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("CorreoInstitucional");
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
 
-                    b.Property<int>("EntidadId")
-                        .HasColumnType("int")
-                        .HasColumnName("EntidadId");
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("FechaDocumentoAutorizacion")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("FechaDocumentoAutorizacion");
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("InformacionOficio")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("InformacionOficio");
+                    b.Property<string>("TipoVinculacionId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Profesion")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)")
-                        .HasColumnName("Profesion");
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
 
-                    b.Property<string>("TarjetaProfesional")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)")
-                        .HasColumnName("TarjetaProfesional");
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Telefono")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)")
-                        .HasColumnName("Telefono");
+                    b.ComplexProperty<Dictionary<string, object>>("Identificacion", "Bext.Reps.Domain.Entities.ContactoEntidad.Identificacion#Identificacion", b1 =>
+                        {
+                            b1.IsRequired();
 
-                    b.Property<int>("TipoContacto")
-                        .HasColumnType("int")
-                        .HasColumnName("TipoContacto");
+                            b1.Property<short>("DigitoVerificacion")
+                                .HasColumnType("smallint")
+                                .HasColumnName("DigitoVerificacion");
 
-                    b.Property<int?>("TipoRepresentanteLegal")
-                        .HasColumnType("int")
-                        .HasColumnName("TipoRepresentanteLegal");
+                            b1.Property<string>("NumeroDocumento")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)")
+                                .HasColumnName("NumeroDocumento");
 
-                    b.ComplexProperty<Dictionary<string, object>>("Nombre", "Bext.Reps.Domain.Entities.Contacto.Nombre#Nombre", b1 =>
+                            b1.Property<string>("TipoIdentificacion")
+                                .IsRequired()
+                                .HasMaxLength(2)
+                                .HasColumnType("nvarchar(2)")
+                                .HasColumnName("TipoIdentificacion");
+                        });
+
+                    b.ComplexProperty<Dictionary<string, object>>("Nombre", "Bext.Reps.Domain.Entities.ContactoEntidad.Nombre#Nombre", b1 =>
                         {
                             b1.IsRequired();
 
                             b1.Property<string>("PrimerApellido")
-                                .IsRequired()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)")
-                                .HasColumnName("PrimeApellido");
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)")
+                                .HasColumnName("PrimerApellido");
 
                             b1.Property<string>("PrimerNombre")
-                                .IsRequired()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)")
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)")
                                 .HasColumnName("PrimerNombre");
 
+                            b1.Property<string>("RazonSocial")
+                                .HasMaxLength(250)
+                                .HasColumnType("nvarchar(250)")
+                                .HasColumnName("RazonSocial");
+
                             b1.Property<string>("SegundoApellido")
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)")
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)")
                                 .HasColumnName("SegundoApellido");
 
                             b1.Property<string>("SegundoNombre")
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)")
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)")
                                 .HasColumnName("SegundoNombre");
                         });
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EntidadId");
+                    b.HasIndex("TipoVinculacionId");
 
-                    b.ToTable("Contactos", (string)null);
+                    b.ToTable("ContactosEntidad", (string)null);
                 });
 
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.Documento", b =>
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Criterio", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)")
-                        .HasColumnName("Descripcion");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("Fecha");
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
 
-                    b.Property<string>("Link")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Link");
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("EstandarId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Nombre");
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
-                    b.Property<int>("RegistroModalidadId")
-                        .HasColumnType("int")
-                        .HasColumnName("RegistroModalidadId");
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RegistroModalidadId");
+                    b.HasIndex("EstandarId");
 
-                    b.ToTable("Documentos", (string)null);
+                    b.ToTable("Criterios");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.DetalleEvaluacionServicio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CriterioId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Cumple")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("EstandarId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EvaluacionServicioId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CriterioId");
+
+                    b.HasIndex("EstandarId");
+
+                    b.HasIndex("EvaluacionServicioId");
+
+                    b.ToTable("DetalleEvaluacionServicio");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.DiaAtencion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DiaSemana")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("FranjaHorariaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FranjaHorariaId");
+
+                    b.ToTable("DiasAtencion");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.DocumentoConstitucion", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("SubTipoNaturalezaId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SubTipoNaturalezaId");
+
+                    b.ToTable("DocumentosConstitucion");
                 });
 
             modelBuilder.Entity("Bext.Reps.Domain.Entities.DocumentoEntidad", b =>
@@ -200,34 +489,44 @@ namespace Bext.Reps.Infrastructure.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
 
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Descripcion");
 
                     b.Property<int>("EntidadId")
                         .HasColumnType("int")
                         .HasColumnName("EntidadId");
 
+                    b.Property<int>("EstadoDocumento")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2")
                         .HasColumnName("Fecha");
 
-                    b.Property<string>("Link")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Link");
-
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Nombre");
 
                     b.Property<int>("TipoDocumentoId")
                         .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -238,22 +537,113 @@ namespace Bext.Reps.Infrastructure.Migrations
                     b.ToTable("DocumentosEntidad", (string)null);
                 });
 
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.DocumentoIdentidad", b =>
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.DocumentoSede", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Descripcion");
+
+                    b.Property<int>("EstadoDocumento")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("Fecha");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Nombre");
 
-                    b.Property<string>("Sigla")
-                        .IsRequired()
+                    b.Property<int>("SedeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoDocumentoId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("DocumentosIdentidad");
+                    b.HasIndex("SedeId");
+
+                    b.HasIndex("TipoDocumentoId");
+
+                    b.ToTable("DocumentoSede");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.DocumentoServicio", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Id");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Descripcion");
+
+                    b.Property<int>("EstadoDocumento")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("Fecha");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Nombre");
+
+                    b.Property<int>("SolicitudId")
+                        .HasColumnType("int")
+                        .HasColumnName("SolicitudId");
+
+                    b.Property<int>("TipoDocumentoId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SolicitudId");
+
+                    b.HasIndex("TipoDocumentoId");
+
+                    b.ToTable("DocumentosServicios", (string)null);
                 });
 
             modelBuilder.Entity("Bext.Reps.Domain.Entities.Entidad", b =>
@@ -268,81 +658,97 @@ namespace Bext.Reps.Infrastructure.Migrations
                     b.Property<int?>("ActaConstitucionId")
                         .HasColumnType("int");
 
-                    b.Property<string>("CorreoElectronico")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("CorreoElectronico");
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Direccion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Nombre");
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
 
-                    b.Property<string>("Sigla")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Sigla");
-
-                    b.Property<string>("TelefonoAdicional")
+                    b.Property<string>("RazonSocial")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("TelefonoAdicional");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TelefonoPrincipal")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("TelefonoPrincipal");
+                    b.Property<string>("SubTipoNaturaleza")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TerceroId")
                         .HasColumnType("int");
 
-                    b.Property<string>("TipoEntidad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("TipoEntidad");
+                    b.Property<string>("TipoNaturalezaId")
+                        .HasColumnType("nvarchar(2)");
 
-                    b.Property<string>("TipoNaturalezaJuridica")
+                    b.Property<string>("TipoPersonaId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("TipoNaturalezaJuridica");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("TipoPrestador")
+                    b.Property<string>("TipoPrestadorId")
                         .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
                         .HasColumnType("nvarchar(max)");
 
-                    b.ComplexProperty<Dictionary<string, object>>("Ubicacion", "Bext.Reps.Domain.Entities.Entidad.Ubicacion#Ubicacion", b1 =>
+                    b.ComplexProperty<Dictionary<string, object>>("DatosContacto", "Bext.Reps.Domain.Entities.Entidad.DatosContacto#Contacto", b1 =>
                         {
                             b1.IsRequired();
 
-                            b1.Property<string>("Departamento")
+                            b1.Property<string>("Email")
                                 .IsRequired()
-                                .HasMaxLength(50)
-                                .HasColumnType("nvarchar(50)")
-                                .HasColumnName("Departamento");
+                                .HasMaxLength(250)
+                                .HasColumnType("nvarchar(250)")
+                                .HasColumnName("Email");
 
-                            b1.Property<string>("Direccion")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                            b1.Property<string>("SitioWeb")
+                                .HasMaxLength(250)
+                                .HasColumnType("nvarchar(250)")
+                                .HasColumnName("SitioWeb");
 
-                            b1.Property<string>("Municipio")
-                                .IsRequired()
-                                .HasMaxLength(50)
-                                .HasColumnType("nvarchar(50)")
-                                .HasColumnName("Municipio");
+                            b1.Property<string>("TelefonoFax")
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)")
+                                .HasColumnName("TelefonoFax");
 
-                            b1.Property<string>("Pais")
+                            b1.Property<string>("TelefonoFijo")
                                 .IsRequired()
-                                .HasMaxLength(50)
-                                .HasColumnType("nvarchar(50)")
-                                .HasColumnName("Pais");
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)")
+                                .HasColumnName("TelefonoFijo");
+
+                            b1.Property<string>("TelefonoMovil")
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)")
+                                .HasColumnName("TelefonoMovil");
+                        });
+
+                    b.ComplexProperty<Dictionary<string, object>>("Identificacion", "Bext.Reps.Domain.Entities.Entidad.Identificacion#Identificacion", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<short>("DigitoVerificacion")
+                                .HasColumnType("smallint")
+                                .HasColumnName("DigitoVerificacion");
+
+                            b1.Property<string>("NumeroDocumento")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)")
+                                .HasColumnName("NumeroDocumento");
+
+                            b1.Property<string>("TipoIdentificacion")
+                                .IsRequired()
+                                .HasMaxLength(2)
+                                .HasColumnType("nvarchar(2)")
+                                .HasColumnName("TipoIdentificacion");
                         });
 
                     b.HasKey("Id");
@@ -351,153 +757,422 @@ namespace Bext.Reps.Infrastructure.Migrations
 
                     b.HasIndex("TerceroId");
 
+                    b.HasIndex("TipoNaturalezaId");
+
+                    b.HasIndex("TipoPersonaId");
+
+                    b.HasIndex("TipoPrestadorId");
+
                     b.ToTable("Entidades", (string)null);
                 });
 
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.Funcionario", b =>
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Especificidad", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
-                    b.Property<int?>("CodigoInterno")
-                        .IsRequired()
-                        .HasColumnType("int")
-                        .HasColumnName("CodigoInterno");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Email");
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
 
-                    b.Property<int?>("EntidadId")
-                        .HasColumnType("int")
-                        .HasColumnName("EntidadId");
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Nombre");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("RolAplicacionId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("RolAplicacionId");
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
 
-                    b.ComplexProperty<Dictionary<string, object>>("RefreshToken", "Bext.Reps.Domain.Entities.Funcionario.RefreshToken#RefreshToken", b1 =>
-                        {
-                            b1.IsRequired();
-
-                            b1.Property<DateTime>("Expiracion")
-                                .HasColumnType("datetime2")
-                                .HasColumnName("Expiracion");
-
-                            b1.Property<DateTime>("FechaCreacion")
-                                .HasColumnType("datetime2")
-                                .HasColumnName("FechaCreacion");
-
-                            b1.Property<string>("Token")
-                                .IsRequired()
-                                .HasMaxLength(100)
-                                .HasColumnType("nvarchar(100)")
-                                .HasColumnName("Token");
-                        });
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RolAplicacionId");
+                    b.ToTable("Especificidades");
+                });
 
-                    b.ToTable("Funcionarios", (string)null);
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede", b =>
+                {
+                    b.Property<int>("ServicioInscritoSedeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EspecificidadId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("ServicioId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ServicioInscritoSedeId", "EspecificidadId");
+
+                    b.HasIndex("EspecificidadId");
+
+                    b.HasIndex("ServicioId");
+
+                    b.ToTable("EspecificidadPorServiciosInscritosSede");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Estandar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Estandares");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.EstandarPorServicio", b =>
+                {
+                    b.Property<int>("ServicioId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EstandarId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ServicioId", "EstandarId");
+
+                    b.HasIndex("EstandarId");
+
+                    b.ToTable("EstandarPorServicios");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.EvaluacionServicio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ServicioInscritoSedeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TipoEvaluacion")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServicioInscritoSedeId");
+
+                    b.ToTable("EvaluacionServicio");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.FranjaHoraria", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<TimeSpan>("HoraApertura")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("HoraCierre")
+                        .HasColumnType("time");
+
+                    b.Property<int>("ServicioInscritoSedeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ServicioInscritoSedeId");
+
+                    b.ToTable("FranjasHoraria");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.GrupoServicio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ModalidadId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(180)
+                        .HasColumnType("nvarchar(180)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ModalidadId");
+
+                    b.ToTable("GruposServicio");
                 });
 
             modelBuilder.Entity("Bext.Reps.Domain.Entities.Modalidad", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("Descripcion");
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
 
-                    b.HasKey("Id");
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Modalidades", (string)null);
-                });
-
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.RegistroModalidad", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("EntidadId")
-                        .HasColumnType("int")
-                        .HasColumnName("EntidadId");
-
-                    b.Property<int>("Estado")
-                        .HasColumnType("int")
-                        .HasColumnName("EstadoRegistro");
-
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("Fecha");
-
-                    b.Property<Guid>("FuncionarioExternoId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("FuncionarioExternoId");
-
-                    b.Property<Guid>("FuncionarioInternoId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("FuncionarioInternoId");
-
-                    b.Property<int>("ModalidadId")
-                        .HasColumnType("int")
-                        .HasColumnName("ModalidadId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EntidadId");
-
-                    b.HasIndex("FuncionarioExternoId");
-
-                    b.HasIndex("FuncionarioInternoId");
-
-                    b.HasIndex("ModalidadId");
-
-                    b.ToTable("RegistroModalidades", (string)null);
-                });
-
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.RolAplicacion", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("Id");
-
-                    b.Property<bool>("EsInterno")
-                        .HasColumnType("bit")
-                        .HasColumnName("EsInterno");
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Nombre");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("RolesAplicacion", (string)null);
+                    b.ToTable("Modalidad");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.MovimientoSolicitud", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Accion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("EstadoSolicitud")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SolicitudId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SolicitudId");
+
+                    b.ToTable("MovimientoSolicitud");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.NivelAtencion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Nivel")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NivelesAtencion");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.PeriodoRepresentacion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ContactoId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EntidadId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("FechaFin")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TipoRepresentacion")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContactoId");
+
+                    b.HasIndex("EntidadId");
+
+                    b.ToTable("PeriodoRepresentacion");
                 });
 
             modelBuilder.Entity("Bext.Reps.Domain.Entities.Sede", b =>
@@ -509,33 +1184,28 @@ namespace Bext.Reps.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CodigoSede")
+                    b.Property<string>("Barrio")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("CodigoSede");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CorreoElectronico")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("CorreoElectronico");
+                    b.Property<string>("CentroPoblado")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DireccionNotificacionJudicial")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("DireccionNotificacionJudicial");
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("EntidadId")
                         .HasColumnType("int")
                         .HasColumnName("EntidadId");
 
-                    b.Property<string>("MatriculaMercantil")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("MatriculaMercantil");
+                    b.Property<bool>("EsPrincipal")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -543,17 +1213,50 @@ namespace Bext.Reps.Infrastructure.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("Nombre");
 
-                    b.Property<string>("RegistroMercantil")
+                    b.Property<string>("NombreResponsable")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("RegistroMercantil");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Telefono")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Telefono");
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Zona")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ComplexProperty<Dictionary<string, object>>("DatosContacto", "Bext.Reps.Domain.Entities.Sede.DatosContacto#Contacto", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<string>("Email")
+                                .IsRequired()
+                                .HasMaxLength(250)
+                                .HasColumnType("nvarchar(250)")
+                                .HasColumnName("Email");
+
+                            b1.Property<string>("SitioWeb")
+                                .HasMaxLength(250)
+                                .HasColumnType("nvarchar(250)")
+                                .HasColumnName("SitioWeb");
+
+                            b1.Property<string>("TelefonoFax")
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)")
+                                .HasColumnName("TelefonoFax");
+
+                            b1.Property<string>("TelefonoFijo")
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)")
+                                .HasColumnName("TelefonoFijo");
+
+                            b1.Property<string>("TelefonoMovil")
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)")
+                                .HasColumnName("TelefonoMovil");
+                        });
 
                     b.ComplexProperty<Dictionary<string, object>>("Ubicacion", "Bext.Reps.Domain.Entities.Sede.Ubicacion#Ubicacion", b1 =>
                         {
@@ -574,12 +1277,6 @@ namespace Bext.Reps.Infrastructure.Migrations
                                 .HasMaxLength(50)
                                 .HasColumnType("nvarchar(50)")
                                 .HasColumnName("Municipio");
-
-                            b1.Property<string>("Pais")
-                                .IsRequired()
-                                .HasMaxLength(50)
-                                .HasColumnType("nvarchar(50)")
-                                .HasColumnName("Pais");
                         });
 
                     b.HasKey("Id");
@@ -587,6 +1284,172 @@ namespace Bext.Reps.Infrastructure.Migrations
                     b.HasIndex("EntidadId");
 
                     b.ToTable("Sedes", (string)null);
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Servicio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("GrupoServicioId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(180)
+                        .HasColumnType("nvarchar(180)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GrupoServicioId");
+
+                    b.ToTable("Servicios");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.ServicioInscritoSede", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ComplejidadServicioId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EntidadId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("GrupoServicioId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SedeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ServicioId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SolicitudId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntidadId");
+
+                    b.HasIndex("SolicitudId");
+
+                    b.ToTable("ServicioInscritoSede");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Solicitud", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EntidadId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("EstadoSolicitud")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TipoSolicitud")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntidadId");
+
+                    b.ToTable("Solicitudes");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.SubTipoNaturaleza", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("TipoNaturalezaId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(2)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TipoNaturalezaId");
+
+                    b.ToTable("SubTiposNaturaleza");
                 });
 
             modelBuilder.Entity("Bext.Reps.Domain.Entities.Tercero", b =>
@@ -598,62 +1461,107 @@ namespace Bext.Reps.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Email")
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TipoPersonaId")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Email");
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("PrimerApellido")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasColumnName("PrimerApellido");
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
 
-                    b.Property<string>("PrimerNombre")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasColumnName("PrimerNombre");
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RazonSocial")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)")
-                        .HasColumnName("RazonSocial");
+                    b.ComplexProperty<Dictionary<string, object>>("DatosContacto", "Bext.Reps.Domain.Entities.Tercero.DatosContacto#Contacto", b1 =>
+                        {
+                            b1.IsRequired();
 
-                    b.Property<string>("SegundoApellido")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasColumnName("SegundoApellido");
+                            b1.Property<string>("Email")
+                                .IsRequired()
+                                .HasMaxLength(250)
+                                .HasColumnType("nvarchar(250)")
+                                .HasColumnName("Email");
 
-                    b.Property<string>("SegundoNombre")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasColumnName("SegundoNombre");
+                            b1.Property<string>("SitioWeb")
+                                .HasMaxLength(250)
+                                .HasColumnType("nvarchar(250)")
+                                .HasColumnName("SitioWeb");
 
-                    b.Property<string>("SitioWeb")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("SitioWeb");
+                            b1.Property<string>("TelefonoFax")
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)")
+                                .HasColumnName("TelefonoFax");
 
-                    b.Property<string>("TelefonoFax")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
-                        .HasColumnName("TelefonoFax");
+                            b1.Property<string>("TelefonoFijo")
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)")
+                                .HasColumnName("TelefonoFijo");
 
-                    b.Property<string>("TelefonoFijo")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
-                        .HasColumnName("TelefonoFijo");
+                            b1.Property<string>("TelefonoMovil")
+                                .IsRequired()
+                                .HasMaxLength(15)
+                                .HasColumnType("nvarchar(15)")
+                                .HasColumnName("TelefonoMovil");
+                        });
 
-                    b.Property<string>("TelefonoMovil")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
-                        .HasColumnName("TelefonoMovil");
+                    b.ComplexProperty<Dictionary<string, object>>("Identificacion", "Bext.Reps.Domain.Entities.Tercero.Identificacion#Identificacion", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<short>("DigitoVerificacion")
+                                .HasColumnType("smallint")
+                                .HasColumnName("DigitoVerificacion");
+
+                            b1.Property<string>("NumeroDocumento")
+                                .IsRequired()
+                                .HasMaxLength(30)
+                                .HasColumnType("nvarchar(30)")
+                                .HasColumnName("NumeroDocumento");
+
+                            b1.Property<string>("TipoIdentificacion")
+                                .IsRequired()
+                                .HasMaxLength(2)
+                                .HasColumnType("nvarchar(2)")
+                                .HasColumnName("TipoIdentificacion");
+                        });
+
+                    b.ComplexProperty<Dictionary<string, object>>("Nombre", "Bext.Reps.Domain.Entities.Tercero.Nombre#Nombre", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<string>("PrimerApellido")
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)")
+                                .HasColumnName("PrimerApellido");
+
+                            b1.Property<string>("PrimerNombre")
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)")
+                                .HasColumnName("PrimerNombre");
+
+                            b1.Property<string>("RazonSocial")
+                                .HasMaxLength(250)
+                                .HasColumnType("nvarchar(250)")
+                                .HasColumnName("RazonSocial");
+
+                            b1.Property<string>("SegundoApellido")
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)")
+                                .HasColumnName("SegundoApellido");
+
+                            b1.Property<string>("SegundoNombre")
+                                .HasMaxLength(20)
+                                .HasColumnType("nvarchar(20)")
+                                .HasColumnName("SegundoNombre");
+                        });
 
                     b.ComplexProperty<Dictionary<string, object>>("Ubicacion", "Bext.Reps.Domain.Entities.Tercero.Ubicacion#Ubicacion", b1 =>
                         {
@@ -667,24 +1575,20 @@ namespace Bext.Reps.Infrastructure.Migrations
 
                             b1.Property<string>("Direccion")
                                 .IsRequired()
-                                .HasMaxLength(80)
-                                .HasColumnType("nvarchar(80)")
+                                .HasMaxLength(250)
+                                .HasColumnType("nvarchar(250)")
                                 .HasColumnName("Direccion");
 
                             b1.Property<string>("Municipio")
                                 .IsRequired()
-                                .HasMaxLength(3)
-                                .HasColumnType("nvarchar(3)")
+                                .HasMaxLength(5)
+                                .HasColumnType("nvarchar(5)")
                                 .HasColumnName("Municipio");
-
-                            b1.Property<string>("Pais")
-                                .IsRequired()
-                                .HasMaxLength(2)
-                                .HasColumnType("nvarchar(2)")
-                                .HasColumnName("Pais");
                         });
 
                     b.HasKey("Id");
+
+                    b.HasIndex("TipoPersonaId");
 
                     b.ToTable("Terceros", (string)null);
                 });
@@ -697,8 +1601,30 @@ namespace Bext.Reps.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Tipo")
+                        .HasColumnType("int");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -706,67 +1632,237 @@ namespace Bext.Reps.Infrastructure.Migrations
                     b.ToTable("TiposDocumentos");
                 });
 
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.Contacto", b =>
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.TipoIdentidad", b =>
                 {
-                    b.HasOne("Bext.Reps.Domain.Entities.Entidad", "Entidad")
-                        .WithMany("Contactos")
-                        .HasForeignKey("EntidadId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.OwnsOne("Bext.Reps.Domain.ValueObjects.Identificacion", "Identificacion", b1 =>
-                        {
-                            b1.Property<int>("ContactoId")
-                                .HasColumnType("int");
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
 
-                            b1.Property<short>("DigitoVerificacion")
-                                .HasColumnType("smallint")
-                                .HasColumnName("DigitoVerificacion");
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
 
-                            b1.Property<string>("NumeroDocumento")
-                                .IsRequired()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)")
-                                .HasColumnName("NumeroDocumento");
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
 
-                            b1.Property<string>("TipoIdentificacionId")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(450)")
-                                .HasColumnName("TipoIdentificacionId");
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                            b1.HasKey("ContactoId");
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
 
-                            b1.HasIndex("TipoIdentificacionId");
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
 
-                            b1.ToTable("Contactos");
+                    b.HasKey("Id");
 
-                            b1.WithOwner()
-                                .HasForeignKey("ContactoId");
-
-                            b1.HasOne("Bext.Reps.Domain.Entities.DocumentoIdentidad", "TipoIdentificacion")
-                                .WithMany()
-                                .HasForeignKey("TipoIdentificacionId")
-                                .OnDelete(DeleteBehavior.Restrict)
-                                .IsRequired();
-
-                            b1.Navigation("TipoIdentificacion");
-                        });
-
-                    b.Navigation("Entidad");
-
-                    b.Navigation("Identificacion")
-                        .IsRequired();
+                    b.ToTable("TiposIdentidad");
                 });
 
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.Documento", b =>
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.TipoNaturaleza", b =>
                 {
-                    b.HasOne("Bext.Reps.Domain.Entities.RegistroModalidad", "RegistroModalidad")
-                        .WithMany("Documentos")
-                        .HasForeignKey("RegistroModalidadId")
+                    b.Property<string>("Id")
+                        .HasMaxLength(2)
+                        .HasColumnType("nvarchar(2)");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TiposNaturaleza");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.TipoPersona", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<bool>("RequiereRepresentante")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TiposPersona");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.TipoVinculacion", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTimeOffset>("Creacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("CreadoPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EstadoRegistro")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset>("UltimaModificacion")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("UltimaModificacionPor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TiposVinculacion");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.ActaConstitucion", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.DocumentoConstitucion", "ActoConstitucion")
+                        .WithMany()
+                        .HasForeignKey("ActoConstitucionId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Bext.Reps.Domain.Entities.CaracterTerritorial", "CaracterTerritorial")
+                        .WithMany()
+                        .HasForeignKey("CaracterTerritorialId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Bext.Reps.Domain.Entities.NivelAtencion", "NivelAtencion")
+                        .WithMany()
+                        .HasForeignKey("NivelAtencionId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("ActoConstitucion");
+
+                    b.Navigation("CaracterTerritorial");
+
+                    b.Navigation("NivelAtencion");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.CapacidadInstalada", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.ServicioInscritoSede", "ServicioInscritoSede")
+                        .WithMany("CapacidadesInstaladas")
+                        .HasForeignKey("ServicioInscritoSedeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ServicioInscritoSede");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.CaracterTerritorial", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.TipoNaturaleza", "TipoNaturaleza")
+                        .WithMany("CaracterTerritorial")
+                        .HasForeignKey("TipoNaturalezaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("TipoNaturaleza");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.ContactoEntidad", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.TipoVinculacion", "TipoVinculacion")
+                        .WithMany()
+                        .HasForeignKey("TipoVinculacionId");
+
+                    b.Navigation("TipoVinculacion");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Criterio", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.Estandar", "Estandar")
+                        .WithMany("Criterios")
+                        .HasForeignKey("EstandarId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Estandar");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.DetalleEvaluacionServicio", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.Criterio", "Criterio")
+                        .WithMany()
+                        .HasForeignKey("CriterioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Bext.Reps.Domain.Entities.Estandar", "Estandar")
+                        .WithMany()
+                        .HasForeignKey("EstandarId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Bext.Reps.Domain.Entities.EvaluacionServicio", null)
+                        .WithMany("Detalles")
+                        .HasForeignKey("EvaluacionServicioId");
+
+                    b.Navigation("Criterio");
+
+                    b.Navigation("Estandar");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.DiaAtencion", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.FranjaHoraria", "FranjaHoraria")
+                        .WithMany("DiasAtencion")
+                        .HasForeignKey("FranjaHorariaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("RegistroModalidad");
+                    b.Navigation("FranjaHoraria");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.DocumentoConstitucion", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.SubTipoNaturaleza", "SubTipoNaturaleza")
+                        .WithMany("DocumentosConstitucion")
+                        .HasForeignKey("SubTipoNaturalezaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("SubTipoNaturaleza");
                 });
 
             modelBuilder.Entity("Bext.Reps.Domain.Entities.DocumentoEntidad", b =>
@@ -788,6 +1884,44 @@ namespace Bext.Reps.Infrastructure.Migrations
                     b.Navigation("TipoDocumento");
                 });
 
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.DocumentoSede", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.Sede", "Sede")
+                        .WithMany("Documentos")
+                        .HasForeignKey("SedeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bext.Reps.Domain.Entities.TipoDocumento", "TipoDocumento")
+                        .WithMany()
+                        .HasForeignKey("TipoDocumentoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Sede");
+
+                    b.Navigation("TipoDocumento");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.DocumentoServicio", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.Solicitud", "Solicitud")
+                        .WithMany("Documentos")
+                        .HasForeignKey("SolicitudId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bext.Reps.Domain.Entities.TipoDocumento", "TipoDocumento")
+                        .WithMany()
+                        .HasForeignKey("TipoDocumentoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Solicitud");
+
+                    b.Navigation("TipoDocumento");
+                });
+
             modelBuilder.Entity("Bext.Reps.Domain.Entities.Entidad", b =>
                 {
                     b.HasOne("Bext.Reps.Domain.Entities.ActaConstitucion", "ActaConstitucion")
@@ -800,96 +1934,136 @@ namespace Bext.Reps.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.OwnsOne("Bext.Reps.Domain.ValueObjects.Identificacion", "Identificacion", b1 =>
-                        {
-                            b1.Property<int>("EntidadId")
-                                .HasColumnType("int");
+                    b.HasOne("Bext.Reps.Domain.Entities.TipoNaturaleza", "TipoNaturaleza")
+                        .WithMany()
+                        .HasForeignKey("TipoNaturalezaId");
 
-                            b1.Property<short>("DigitoVerificacion")
-                                .HasColumnType("smallint")
-                                .HasColumnName("DigitoVerificacion");
-
-                            b1.Property<string>("NumeroDocumento")
-                                .IsRequired()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)")
-                                .HasColumnName("NumeroDocumento");
-
-                            b1.Property<string>("TipoIdentificacionId")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(450)")
-                                .HasColumnName("TipoIdentificacionId");
-
-                            b1.HasKey("EntidadId");
-
-                            b1.HasIndex("TipoIdentificacionId");
-
-                            b1.ToTable("Entidades");
-
-                            b1.WithOwner()
-                                .HasForeignKey("EntidadId");
-
-                            b1.HasOne("Bext.Reps.Domain.Entities.DocumentoIdentidad", "TipoIdentificacion")
-                                .WithMany()
-                                .HasForeignKey("TipoIdentificacionId")
-                                .OnDelete(DeleteBehavior.Restrict)
-                                .IsRequired();
-
-                            b1.Navigation("TipoIdentificacion");
-                        });
-
-                    b.Navigation("ActaConstitucion");
-
-                    b.Navigation("Identificacion")
-                        .IsRequired();
-
-                    b.Navigation("Tercero");
-                });
-
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.Funcionario", b =>
-                {
-                    b.HasOne("Bext.Reps.Domain.Entities.RolAplicacion", "RolAplicacion")
-                        .WithMany("Funcionarios")
-                        .HasForeignKey("RolAplicacionId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("RolAplicacion");
-                });
-
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.RegistroModalidad", b =>
-                {
-                    b.HasOne("Bext.Reps.Domain.Entities.Entidad", "Entidad")
-                        .WithMany("RegistrosModalidad")
-                        .HasForeignKey("EntidadId")
+                    b.HasOne("Bext.Reps.Domain.Entities.TipoPersona", "TipoPersona")
+                        .WithMany()
+                        .HasForeignKey("TipoPersonaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Bext.Reps.Domain.Entities.Funcionario", "FuncionarioExterno")
+                    b.HasOne("Bext.Reps.Domain.Entities.ClasePrestador", "TipoPrestador")
                         .WithMany()
-                        .HasForeignKey("FuncionarioExternoId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .HasForeignKey("TipoPrestadorId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Bext.Reps.Domain.Entities.Funcionario", "FuncionarioInterno")
+                    b.Navigation("ActaConstitucion");
+
+                    b.Navigation("Tercero");
+
+                    b.Navigation("TipoNaturaleza");
+
+                    b.Navigation("TipoPersona");
+
+                    b.Navigation("TipoPrestador");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.EspecificidadPorServicioInscritoSede", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.Especificidad", "Especificidad")
                         .WithMany()
-                        .HasForeignKey("FuncionarioInternoId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .HasForeignKey("EspecificidadId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Bext.Reps.Domain.Entities.Servicio", null)
+                        .WithMany("Especificidades")
+                        .HasForeignKey("ServicioId");
+
+                    b.HasOne("Bext.Reps.Domain.Entities.ServicioInscritoSede", "ServicioInscritoSede")
+                        .WithMany()
+                        .HasForeignKey("ServicioInscritoSedeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Especificidad");
+
+                    b.Navigation("ServicioInscritoSede");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.EstandarPorServicio", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.Estandar", "Estandar")
+                        .WithMany()
+                        .HasForeignKey("EstandarId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Bext.Reps.Domain.Entities.Servicio", "Servicio")
+                        .WithMany("Estandares")
+                        .HasForeignKey("ServicioId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Estandar");
+
+                    b.Navigation("Servicio");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.EvaluacionServicio", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.ServicioInscritoSede", "ServicioInscritoSede")
+                        .WithMany("Evaluaciones")
+                        .HasForeignKey("ServicioInscritoSedeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ServicioInscritoSede");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.FranjaHoraria", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.ServicioInscritoSede", "ServicioInscritoSede")
+                        .WithMany("FranjasHorarias")
+                        .HasForeignKey("ServicioInscritoSedeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ServicioInscritoSede");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.GrupoServicio", b =>
+                {
                     b.HasOne("Bext.Reps.Domain.Entities.Modalidad", "Modalidad")
-                        .WithMany("RegistrosModalidad")
+                        .WithMany()
                         .HasForeignKey("ModalidadId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Entidad");
-
-                    b.Navigation("FuncionarioExterno");
-
-                    b.Navigation("FuncionarioInterno");
-
                     b.Navigation("Modalidad");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.MovimientoSolicitud", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.Solicitud", "Solicitud")
+                        .WithMany("MovimientosSolicitud")
+                        .HasForeignKey("SolicitudId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Solicitud");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.PeriodoRepresentacion", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.ContactoEntidad", "Contacto")
+                        .WithMany("PeriodosRepresentacion")
+                        .HasForeignKey("ContactoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Bext.Reps.Domain.Entities.Entidad", "Entidad")
+                        .WithMany("Periodos")
+                        .HasForeignKey("EntidadId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Contacto");
+
+                    b.Navigation("Entidad");
                 });
 
             modelBuilder.Entity("Bext.Reps.Domain.Entities.Sede", b =>
@@ -903,74 +2077,141 @@ namespace Bext.Reps.Infrastructure.Migrations
                     b.Navigation("Entidad");
                 });
 
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Servicio", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.GrupoServicio", "GrupoServicio")
+                        .WithMany("Servicios")
+                        .HasForeignKey("GrupoServicioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GrupoServicio");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.ServicioInscritoSede", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.Entidad", null)
+                        .WithMany("Servicios")
+                        .HasForeignKey("EntidadId");
+
+                    b.HasOne("Bext.Reps.Domain.Entities.Solicitud", "Solicitud")
+                        .WithMany("Servicios")
+                        .HasForeignKey("SolicitudId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Solicitud");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Solicitud", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.Entidad", "Entidad")
+                        .WithMany()
+                        .HasForeignKey("EntidadId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Entidad");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.SubTipoNaturaleza", b =>
+                {
+                    b.HasOne("Bext.Reps.Domain.Entities.TipoNaturaleza", "TipoNaturaleza")
+                        .WithMany("SubTipoNaturalezas")
+                        .HasForeignKey("TipoNaturalezaId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("TipoNaturaleza");
+                });
+
             modelBuilder.Entity("Bext.Reps.Domain.Entities.Tercero", b =>
                 {
-                    b.OwnsOne("Bext.Reps.Domain.ValueObjects.Identificacion", "Identificacion", b1 =>
-                        {
-                            b1.Property<int>("TerceroId")
-                                .HasColumnType("int");
-
-                            b1.Property<short>("DigitoVerificacion")
-                                .HasColumnType("smallint")
-                                .HasColumnName("DigitoVerificacion");
-
-                            b1.Property<string>("NumeroDocumento")
-                                .IsRequired()
-                                .HasMaxLength(30)
-                                .HasColumnType("nvarchar(30)")
-                                .HasColumnName("NumeroDocumento");
-
-                            b1.Property<string>("TipoIdentificacionId")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(450)")
-                                .HasColumnName("TipoIdentificacionId");
-
-                            b1.HasKey("TerceroId");
-
-                            b1.HasIndex("TipoIdentificacionId");
-
-                            b1.ToTable("Terceros");
-
-                            b1.WithOwner()
-                                .HasForeignKey("TerceroId");
-
-                            b1.HasOne("Bext.Reps.Domain.Entities.DocumentoIdentidad", "TipoIdentificacion")
-                                .WithMany()
-                                .HasForeignKey("TipoIdentificacionId")
-                                .OnDelete(DeleteBehavior.Cascade)
-                                .IsRequired();
-
-                            b1.Navigation("TipoIdentificacion");
-                        });
-
-                    b.Navigation("Identificacion")
+                    b.HasOne("Bext.Reps.Domain.Entities.TipoPersona", "TipoPersona")
+                        .WithMany()
+                        .HasForeignKey("TipoPersonaId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("TipoPersona");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.ContactoEntidad", b =>
+                {
+                    b.Navigation("PeriodosRepresentacion");
                 });
 
             modelBuilder.Entity("Bext.Reps.Domain.Entities.Entidad", b =>
                 {
-                    b.Navigation("Contactos");
-
                     b.Navigation("DocumentosEntidad");
 
-                    b.Navigation("RegistrosModalidad");
+                    b.Navigation("Periodos");
 
                     b.Navigation("Sedes");
+
+                    b.Navigation("Servicios");
                 });
 
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.Modalidad", b =>
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Estandar", b =>
                 {
-                    b.Navigation("RegistrosModalidad");
+                    b.Navigation("Criterios");
                 });
 
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.RegistroModalidad", b =>
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.EvaluacionServicio", b =>
+                {
+                    b.Navigation("Detalles");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.FranjaHoraria", b =>
+                {
+                    b.Navigation("DiasAtencion");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.GrupoServicio", b =>
+                {
+                    b.Navigation("Servicios");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Sede", b =>
                 {
                     b.Navigation("Documentos");
                 });
 
-            modelBuilder.Entity("Bext.Reps.Domain.Entities.RolAplicacion", b =>
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Servicio", b =>
                 {
-                    b.Navigation("Funcionarios");
+                    b.Navigation("Especificidades");
+
+                    b.Navigation("Estandares");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.ServicioInscritoSede", b =>
+                {
+                    b.Navigation("CapacidadesInstaladas");
+
+                    b.Navigation("Evaluaciones");
+
+                    b.Navigation("FranjasHorarias");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.Solicitud", b =>
+                {
+                    b.Navigation("Documentos");
+
+                    b.Navigation("MovimientosSolicitud");
+
+                    b.Navigation("Servicios");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.SubTipoNaturaleza", b =>
+                {
+                    b.Navigation("DocumentosConstitucion");
+                });
+
+            modelBuilder.Entity("Bext.Reps.Domain.Entities.TipoNaturaleza", b =>
+                {
+                    b.Navigation("CaracterTerritorial");
+
+                    b.Navigation("SubTipoNaturalezas");
                 });
 #pragma warning restore 612, 618
         }

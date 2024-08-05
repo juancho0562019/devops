@@ -12,9 +12,8 @@ public class ConfiguracionDocumentoEntidad : IEntityTypeConfiguration<DocumentoE
         builder.ToTable(@"DocumentosEntidad");
         builder.Property(x => x.Id).HasColumnName(@"Id").IsRequired().ValueGeneratedOnAdd();
         builder.Property(x => x.Fecha).HasColumnName(@"Fecha").IsRequired().ValueGeneratedNever();
-        builder.Property(x => x.Link).HasColumnName(@"Link").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        builder.Property(x => x.Nombre).HasColumnName(@"Nombre").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        builder.Property(x => x.Descripcion).HasColumnName(@"Descripcion").ValueGeneratedNever().HasMaxLength(50);
+        builder.Property(x => x.Nombre).HasColumnName(@"Nombre").IsRequired().ValueGeneratedNever();
+        builder.Property(x => x.Descripcion).HasColumnName(@"Descripcion").ValueGeneratedNever();
         builder.Property(x => x.EntidadId).HasColumnName(@"EntidadId").ValueGeneratedNever();
       
         builder.HasKey(@"Id");

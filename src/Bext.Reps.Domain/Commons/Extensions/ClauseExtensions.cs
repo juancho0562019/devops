@@ -9,7 +9,7 @@ public static class ClauseExtensions
         {
             if (string.IsNullOrEmpty(message))
             {
-                throw new ArgumentNullException(parameterName);
+                throw new ArgumentNullException(parameterName, DefaultMessage.IsRequired);
             }
             throw new ArgumentNullException(parameterName, message);
         }

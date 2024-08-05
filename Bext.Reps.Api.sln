@@ -21,16 +21,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		Directory.Build.props = Directory.Build.props
 		Directory.Packages.props = Directory.Packages.props
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.FunctionalTests", "tests\Business.FunctionalTests\Business.FunctionalTests.csproj", "{2E60FAE5-E226-49A3-BC26-1C88B9C28D73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.FunctionalTests", "tests\Business.FunctionalTests\Business.FunctionalTests.csproj", "{2E60FAE5-E226-49A3-BC26-1C88B9C28D73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.UnitTests", "tests\Business.UnitTests\Business.UnitTests.csproj", "{035FFA68-7B86-4B79-812C-67FD2AABE40B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.UnitTests", "tests\Business.UnitTests\Business.UnitTests.csproj", "{035FFA68-7B86-4B79-812C-67FD2AABE40B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.UnitTests", "tests\Domain.UnitTests\Domain.UnitTests.csproj", "{CE5F07D1-5C78-4C7B-B38F-EAC3965D062D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.UnitTests", "tests\Domain.UnitTests\Domain.UnitTests.csproj", "{CE5F07D1-5C78-4C7B-B38F-EAC3965D062D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.IntegrationTests", "tests\Infrastructure.IntegrationTests\Infrastructure.IntegrationTests.csproj", "{47BBFF55-1C5B-4AA2-945D-B21C5246F4EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.IntegrationTests", "tests\Infrastructure.IntegrationTests\Infrastructure.IntegrationTests.csproj", "{47BBFF55-1C5B-4AA2-945D-B21C5246F4EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

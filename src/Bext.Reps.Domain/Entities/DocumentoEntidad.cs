@@ -1,35 +1,29 @@
 ﻿
-using Bext.Reps.Domain.Primitives;
+using Bext.Reps.Domain.Commons.Abstracts;
 
 namespace Bext.Reps.Domain.Entities;
 
-public sealed class DocumentoEntidad : BaseEntity<Guid>
+public sealed class DocumentoEntidad : ADocumento<Guid>
 {
-    public required DateTime Fecha { get; init; }
-    public required string Link { get; init; }
-    public required string Nombre { get; init; }
-    public required string Descripcion { get; init; }
-    public TipoDocumento TipoDocumento { get; init; }
+    public TipoDocumento TipoDocumento { get; init; } = null!;
     public required int TipoDocumentoId { get; init; }
     public int EntidadId { get; set; }
     public Entidad? Entidad { get; set; }
 
-
-    public static DocumentoEntidad Create(DateTime fecha, string link, string nombre, string descripcion, int tipoDocumentoId)
+    public static DocumentoEntidad Create(DateTime fecha, string link, string? nombre, string? descripcion, int? tipoDocumentoId)
     {
-        ArgumentNullException.ThrowIfNull(fecha, nameof(fecha));
-        ArgumentException.ThrowIfNullOrEmpty(link, nameof(link));
-        ArgumentException.ThrowIfNullOrEmpty(nombre, nameof(nombre));
-        ArgumentException.ThrowIfNullOrEmpty(descripcion, nameof(descripcion));
-        ArgumentNullException.ThrowIfNull(tipoDocumentoId, nameof(tipoDocumentoId));
+        ArgumentNullException.ThrowIfNull(fecha);
+        ArgumentException.ThrowIfNullOrEmpty(nombre);
+        ArgumentException.ThrowIfNullOrEmpty(descripcion);
+        ArgumentNullException.ThrowIfNull(tipoDocumentoId);
 
         var documento = new DocumentoEntidad
         {
             Fecha = fecha,
-            Link = link,
             Nombre = nombre,
             Descripcion = descripcion,
-            TipoDocumentoId = tipoDocumentoId
+            TipoDocumentoId = (int)tipoDocumentoId,
+            EstadoDocumento = Commons.Enums.EstadoDocumento.Recibido
         };
 
         return documento;

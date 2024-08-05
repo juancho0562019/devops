@@ -8,24 +8,29 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspNetCore.HealthChecks.AzureStorage"/>
-    <PackageReference Include="AspNetCore.HealthChecks.SqlServer"/>
-    <PackageReference Include="AspNetCore.HealthChecks.UI.Client"/>
-    <PackageReference Include="AutoMapper"/>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection"/>
-    <PackageReference Include="Microsoft.EntityFrameworkCore"  />
+    <PackageReference Include="AspNetCore.HealthChecks.AzureStorage" />
+
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" />
+    <PackageReference Include="FluentValidation.AspNetCore" />
+    <PackageReference Include="MicroElements.Swashbuckle.FluentValidation" />
+    <PackageReference Include="Microsoft.ApplicationInsights" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" >
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Serilog" />
-    <PackageReference Include="Serilog.AspNetCore"  />
-    <PackageReference Include="Serilog.Sinks.ApplicationInsights"  />
-    <PackageReference Include="Serilog.Sinks.Console"  />
+    <PackageReference Include="Serilog.AspNetCore" />
+    <PackageReference Include="Serilog.Sinks.ApplicationInsights" />
+    <PackageReference Include="Serilog.Sinks.Console" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
 
-    <PackageReference Include="Swashbuckle.AspNetCore"  />
-    <PackageReference Include="Swashbuckle.AspNetCore.Filters"  />
+
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" />
   </ItemGroup>
 
   <ItemGroup>

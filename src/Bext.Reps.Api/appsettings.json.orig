@@ -1,0 +1,69 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+
+    "RepsConnectionString": "Server=sqlserver1;Database=Minsalud4;Integrated Security=True;TrustServerCertificate=True"
+  },
+  "AppSettings": {
+    "PageDomain": "sisprodesa.local",
+    "MainURL": "https://web.sisprodesa.local",
+    "AppInsight.InsKey": "",
+    "TicketName": "sisproTDev",
+    "LoginURL": "https://web.sisprodesa.local/Seguridad/Cliente/Web/User/SignIn.aspx",
+    "DecryptionKey": "67EEA4107ACA8D8F706324E9A7DAC24AC7EDE882396867DA",
+    "ValidationKey": "1FFC8006C2A22997A54659661AD70427CA5AC30AF0B1590B9C0AF747D3A74C73FD1E35A2ACB752604E9D198B742EE9AF14D4B950162E6EE3A3A556A244D2EF47",
+    "GeneralDirectoryWSURL": "https://web.sisprodesa.local/GeneralDirectory/GeneralDirectory.svc",
+    "LogWSURL": "https://web.sisprodesa.local/Log/Servicios/Log.svc",
+    "FileExporterWSURL": "https://web.sisprodesa.local/FileExporter/FileExporterService.svc",
+    "Email.Api.URL": "https://web.sisprodesa.local/Email/Api/",
+    "Email.Api.Key": "784512",
+    "ExternalDomains": "sispro.gov.co"
+  },
+  "GlobalValidFile": {
+    "MaxSizeProperty": 5242880, // 5 megas en bytes
+    "ValidExtension": [ ".doc", ".docx", ".pdf" ]
+  },
+  "ClientOptions": {
+    "BaseUrl": "http://api_directorio:5000",
+    "ApiVersion": ""
+  },
+  "ClientOptionsControlDoc": {
+    "BaseUrl": "https://5582159c-08af-4b3d-b0b3-49e9d32b3073.mock.pstmn.io",
+    "ApiVersion": ""
+  },
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.ApplicationInsights" ],
+    "MinimumLevel": "Debug",
+    "WriteTo": [
+      { "Name": "Console" },
+      {
+        "Name": "ApplicationInsights",
+        "Args": {
+          "instrumentationKey": "your-instrumentation-key"
+        }
+      }
+    ],
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ],
+    "Properties": {
+      "Application": "Reps"
+    }
+  },
+  "Jwt": {
+    "Issuer": "Reps",
+    "Audience": "Reps",
+    "SecretKey": "8903F005-AD4B-4E0A-B463-5BFD73790D7A"
+  },
+  "AllowedHosts": "*",
+  "Kestrel": {
+    "Endpoints": {
+      "Http": {
+        "Url": "http://*:9000"
+      }
+    }
+  }
+}

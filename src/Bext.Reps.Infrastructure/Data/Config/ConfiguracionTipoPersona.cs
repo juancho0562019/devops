@@ -1,26 +1,18 @@
-﻿using Bext.Reps.Domain.Entities;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Bext.Reps.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Bext.Reps.Infrastructure.Data.Config;
-
 public class ConfiguracionTipoPersona : IEntityTypeConfiguration<TipoPersona>
 {
     public void Configure(EntityTypeBuilder<TipoPersona> builder)
     {
-        builder.ToTable(@"TiposPersona");
-
-        builder.Property(x => x.Id)
-            .HasColumnName(@"Id")
-            .HasMaxLength(2)
-            .IsRequired();
-
-        builder.Property(x => x.Nombre)
-            .HasColumnName(@"Nombre")
-            .IsRequired()
-            .HasMaxLength(50);
-
-       
+        builder.HasKey(v => v.Id);
+        builder.Property(v => v.Nombre).HasMaxLength(80).IsRequired();
     }
 }

@@ -1,0 +1,35 @@
+# Usa la imagen base de .NET SDK para construir la aplicación
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
+
+# Copia los archivos de proyecto y restaura las dependencias
+COPY ["DirectorioGeneral_Code/DirectorioGeneral.Api/DirectorioGeneral.Api.csproj", "src/DirectorioGeneral.Api/"]
+COPY ["DirectorioGeneral_Code/DirectorioGeneral.Core/DirectorioGeneral.Core.csproj", "src/DirectorioGeneral.Core/"]
+COPY ["DirectorioGeneral_Code/DirectorioGeneral.Infra/DirectorioGeneral.Infra.csproj", "src/DirectorioGeneral.Infra/"]
+RUN dotnet restore "src/DirectorioGeneral.Api/DirectorioGeneral.Api.csproj"
+
+# Copia el resto de los archivos y construye el proyecto
+COPY ./DirectorioGeneral_Code .
+WORKDIR "/src/DirectorioGeneral.Api"
+RUN dotnet build "DirectorioGeneral.Api.csproj" -c Release -o /app/build
+
+# Publica la aplicación
+FROM build AS publish
+RUN dotnet publish "DirectorioGeneral.Api.csproj" -c Release -o /app/publish
+
+# Usa la imagen base de ASP.NET para ejecutar la aplicación
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+WORKDIR /app
+
+COPY ["DirectorioGeneral_Code/DirectorioGeneral.Api/sisprodesa", "."]
+# Copia los archivos publicados desde el contenedor de construcción
+COPY --from=publish /app/publish .
+# Configurar la variable de entorno para el entorno de desarrollo
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV ASPNETCORE_URLS=http://+:5000
+
+# Exponer el puerto 5000
+EXPOSE 5000
+
+# Establecer el punto de entrada
+ENTRYPOINT ["dotnet", "DirectorioGeneral.Api.dll"]

@@ -1,4 +1,5 @@
-﻿using Bext.Reps.Domain.Commons.Exceptions;
+﻿using Bext.Reps.Business.Commons.Exceptions;
+using Bext.Reps.Domain.Commons.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -28,9 +29,11 @@ public class DefaultExceptionHandler : IExceptionHandler
 
         switch (exception)
         {
+            
             case ArgumentNullException:
             case NullReferenceException:
             case ArgumentOutOfRangeException:
+            case ArgumentException:
                 problemDetails.Status = (int)HttpStatusCode.BadRequest;
                 problemDetails.Title = "Por favor revise la solicitud del servicio.";
                 
@@ -46,6 +49,15 @@ public class DefaultExceptionHandler : IExceptionHandler
                 problemDetails.Status = (int)HttpStatusCode.RequestTimeout;
                 problemDetails.Title = "Tiempo de espera agotado.";
                 break;
+            case AppValidationException:
+                var validationException = (AppValidationException)exception;
+                problemDetails = new ValidationProblemDetails(validationException.Errors) 
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                    Title = "Ha ocurrido un error de validacion"
+                };
+               
+                break;
             default:
                 problemDetails.Status = (int)HttpStatusCode.InternalServerError;
                 problemDetails.Title = "Ha ocurrido un error inesperado.";
@@ -58,7 +70,10 @@ public class DefaultExceptionHandler : IExceptionHandler
         
         httpContext.Response.Clear();
         httpContext.Response.StatusCode = problemDetails.Status.Value;
-        await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken: cancellationToken);
+        if(problemDetails is ValidationProblemDetails details)
+            await httpContext.Response.WriteAsJsonAsync(details, cancellationToken: cancellationToken);
+        else
+            await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken: cancellationToken);
 
         return true;
     }

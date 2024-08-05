@@ -23,14 +23,15 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 
 # Copia los archivos publicados desde el contenedor de construcción
+COPY ["src/sisprodesa", "."]
 COPY --from=publish /app/publish .
 
 # Configurar la variable de entorno para el entorno de desarrollo
 ENV ASPNETCORE_ENVIRONMENT=Development
-ENV ASPNETCORE_URLS=http://+:5000
+ENV ASPNETCORE_URLS=http://+:9000
 
 # Exponer el puerto 5000
-EXPOSE 5000
+EXPOSE 9000
 
 # Establecer el punto de entrada
 ENTRYPOINT ["dotnet", "Bext.Reps.Api.dll"]

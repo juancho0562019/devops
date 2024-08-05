@@ -1,74 +1,109 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Bext.Reps.Domain.Entities;
-using Bext.Reps.Domain.ValueObjects;
+using Bext.Reps.Infrastructure.Data.Config.Base;
 
 namespace Bext.Reps.Infrastructure.Data.Config;
 
 public class ConfiguracionEntidad : IEntityTypeConfiguration<Entidad>
 {
-    public void Configure(EntityTypeBuilder<Entidad> builder)
+    public  void Configure(EntityTypeBuilder<Entidad> builder)
     {
+ 
         builder.ToTable(@"Entidades");
-        builder.Property(x => x.Id).HasColumnName(@"Id").IsRequired().ValueGeneratedOnAdd();
-        builder.Property(x => x.TipoNaturalezaJuridica).HasColumnName(@"TipoNaturalezaJuridica").IsRequired().ValueGeneratedNever();
-        builder.Property(x => x.TipoEntidad).HasColumnName(@"TipoEntidad").IsRequired().ValueGeneratedNever();
-        //builder.ComplexProperty(x => x.Identificacion, y =>
-        //{
-        //    y.IsRequired();
-        //    y.Property(z => z.TipoIdentificacion).HasColumnName(@"TipoIdentificacion").IsRequired().ValueGeneratedNever();
-        //    y.Property(z => z.NumeroDocumento).HasColumnName(@"NumeroDocumento").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        //    y.Property(z => z.DigitoVerificacion).HasColumnName(@"DigitoVerificacion").IsRequired().ValueGeneratedNever();
-        //});
+        builder.Property(x => x.Id)
+            .HasColumnName(@"Id")
+            .IsRequired()
+            .ValueGeneratedOnAdd();
 
-        builder.OwnsOne(e => e.Identificacion, y =>
+        //builder.Property(x => x.TipoNaturaleza)
+        //    .HasColumnName(@"TipoNaturaleza")
+        //    .HasMaxLength(2)
+        //    .IsRequired();
+
+        //builder.Property(x => x.SubTipoNaturaleza)
+        //    .HasColumnName(@"SubTipoNaturaleza")
+        //    .HasMaxLength(2)
+        //    .IsRequired();     
+        
+
+        builder.ComplexProperty(p => p.Identificacion, y =>
         {
-            y.Property(i => i.TipoIdentificacionId).HasColumnName("TipoIdentificacionId").IsRequired();
-            y.Property(i => i.NumeroDocumento).HasColumnName("NumeroDocumento").IsRequired().HasMaxLength(30);
+            y.Property(i => i.TipoIdentificacion)
+                .HasColumnName("TipoIdentificacion")
+                .HasMaxLength(2)
+                .IsRequired();
+            y.Property(i => i.NumeroDocumento)
+                .HasColumnName("NumeroDocumento")
+                .IsRequired()
+                .HasMaxLength(30);
             y.Property(i => i.DigitoVerificacion).HasColumnName("DigitoVerificacion").IsRequired();
 
-            y.HasOne(i => i.TipoIdentificacion)
-             .WithMany()
-             .HasForeignKey(i => i.TipoIdentificacionId)
-             .OnDelete(DeleteBehavior.Restrict);
         });
-        builder.Property(x => x.Nombre).HasColumnName(@"Nombre").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        builder.Property(x => x.Sigla).HasColumnName(@"Sigla").ValueGeneratedNever().HasMaxLength(50);
-        builder.ComplexProperty(x => x.Ubicacion, t =>
+
+        builder.ComplexProperty(x => x.DatosContacto, t =>
         {
             t.IsRequired();
-            t.Property(z => z.Pais).HasColumnName(@"Pais").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-            t.Property(z => z.Departamento).HasColumnName(@"Departamento").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-            t.Property(z => z.Municipio).HasColumnName(@"Municipio").IsRequired().HasMaxLength(50);
+
+            t.Property(x => x.Email)
+                .HasColumnName(@"Email")
+                .IsRequired()
+                .HasMaxLength(250);
+
+            t.Property(x => x.TelefonoFijo)
+                .HasColumnName(@"TelefonoFijo")
+                .IsRequired(true)
+                .HasMaxLength(15);
+
+            t.Property(x => x.TelefonoMovil)
+                .HasColumnName(@"TelefonoMovil")
+                .IsRequired(false)
+                .HasMaxLength(15);
+
+            t.Property(x => x.TelefonoFax)
+                .HasColumnName(@"TelefonoFax")
+                .HasMaxLength(15);
+
+            t.Property(x => x.SitioWeb)
+                .HasColumnName(@"SitioWeb")
+                .HasMaxLength(250);
         });
-       
-        builder.Property(x => x.CorreoElectronico).HasColumnName(@"CorreoElectronico").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        builder.Property(x => x.TelefonoPrincipal).HasColumnName(@"TelefonoPrincipal").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        builder.Property(x => x.TelefonoAdicional).HasColumnName(@"TelefonoAdicional").IsRequired().ValueGeneratedNever().HasMaxLength(50);
-        
-        builder.HasKey(@"Id");
-        builder.HasMany(x => x.Contactos)
-            .WithOne(op => op.Entidad)
-            .HasForeignKey(@"EntidadId")
-            .IsRequired(true);
 
 
-        builder.HasMany(x => x.RegistrosModalidad)
-            .WithOne(op => op.Entidad)
-            .HasForeignKey(@"EntidadId")
-            .IsRequired(true);
-        
+        builder.HasOne(c => c.Tercero)
+          .WithMany()
+          .HasForeignKey(v => v.TerceroId)
+          .IsRequired(true);
+
+        builder.HasOne(c => c.ActaConstitucion)
+           .WithMany()
+           .HasForeignKey(v => v.ActaConstitucionId)
+           .IsRequired(false);
+
         builder.HasMany(x => x.DocumentosEntidad)
             .WithOne(op => op.Entidad)
-            .HasForeignKey(@"EntidadId")
+            .HasForeignKey(v => v.EntidadId)
             .IsRequired(true);
 
         builder.HasMany(x => x.Sedes)
             .WithOne(op => op.Entidad)
-            .HasForeignKey(@"EntidadId")
+            .HasForeignKey(v => v.EntidadId)
             .IsRequired(true);
 
-        //builder.HasIndex(b => b.Identificacion => ( c => c.NumeroDocumento))
-        //    .HasDatabaseName("IX_NumeroDocumento_Ascending");
+        builder.HasOne(x => x.TipoPersona)
+            .WithMany()
+            .HasForeignKey(x => x.TipoPersonaId)
+            .IsRequired();
+
+        builder.HasOne(x => x.TipoPrestador)
+            .WithMany()
+            .HasForeignKey(x => x.TipoPrestadorId)
+            .IsRequired();
+
+        builder.HasOne(x => x.TipoNaturaleza)
+            .WithMany()
+            .HasForeignKey(x => x.TipoNaturalezaId)
+            .IsRequired(false);
+
     }
 }

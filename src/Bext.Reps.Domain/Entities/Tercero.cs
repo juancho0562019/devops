@@ -1,42 +1,43 @@
-using Bext.Reps.Domain.Primitives;
-using Bext.Reps.Domain.ValueObjects;
+using Bext.Reps.Domain.Commons.Abstracts;
+using Bext.Reps.Domain.Commons.Enums;
+using Bext.Reps.Domain.Commons.Primitives;
+using Bext.Reps.Domain.Commons.ValueObjects;
 
 namespace Bext.Reps.Domain.Entities;
 public sealed class Tercero : BaseEntity<int>
 {
-    public TipoPersona TipoPersona { get; set; }
-    public string TipoPersonaId { get; set; }
-    public Identificacion Identificacion { get; private set; }
-    public string? PrimerNombre { get; private set; }
-    public string? SegundoNombre { get; private set; }
-    public string? PrimerApellido { get; private set; }
-    public string? SegundoApellido { get; private set; }
-    public string? RazonSocial { get; private set; }
-    public Ubicacion Ubicacion { get; private set; }
-    public string? TelefonoFijo { get; private set; }
-    public string? TelefonoMovil { get; private set; }
-    public string? TelefonoFax { get; private set; }
-    public string? SitioWeb { get; private set; }
-    public string? Email { get; private set; }
-
+    public TipoPersona TipoPersona { get; private set; }
+    public string TipoPersonaId { get; private set; }
+    public Identificacion Identificacion { get; private set; } = null!;
+    public Nombre Nombre { get; private set; } = null!;
+    public Ubicacion Ubicacion { get; private set; } = null!;
+    public Contacto DatosContacto { get; private set; } = null!;
     private Tercero() { }
 
 
-    public void ActualizarTipoPersona(TipoPersona tipoPersona)
+    public string GetNombre()
     {
-        TipoPersona = tipoPersona.ValidateNull(nameof(tipoPersona));
+        if (TipoPersonaId.Equals("PN", StringComparison.OrdinalIgnoreCase))
+        {
+            return $"{Nombre.PrimerNombre} {Nombre.SegundoNombre} {Nombre.PrimerApellido} {Nombre.SegundoApellido}".Trim();
+        }
+        else
+        {
+            return Nombre.RazonSocial ?? string.Empty;
+        }
+    }
+    public void ActualizarTipoPersona(string tipoPersona)
+    {
+        TipoPersonaId = tipoPersona.ValidateNull(nameof(tipoPersona));
     }
     public void ActualizarIdentificacion(Identificacion identificacion)
     {
         Identificacion = identificacion.ValidateNull(nameof(identificacion));
     }
-
-    public void ActualizarNombres(string? primerNombre, string? segundoNombre, string? primerApellido, string? segundoApellido)
+  
+    public void ActualizarNombres(string? razonSocial,string? primerNombre, string? segundoNombre, string? primerApellido, string? segundoApellido)
     {
-        PrimerNombre = primerNombre.ValidateNotNullOrEmpty(nameof(primerNombre));
-        SegundoNombre = segundoNombre;
-        PrimerApellido = primerApellido.ValidateNotNullOrEmpty(nameof(primerApellido));
-        SegundoApellido = segundoApellido;
+        Nombre = Nombre.Crear(razonSocial, primerNombre, primerApellido, segundoNombre, segundoApellido);
     }
 
     public void ActualizarUbicacion(Ubicacion ubicacion)
@@ -44,55 +45,40 @@ public sealed class Tercero : BaseEntity<int>
         Ubicacion = ubicacion.ValidateNull(nameof(ubicacion));
     }
 
-    public void ActualizarContactos(string? telefonoFijo, string? telefonoMovil, string? telefonoFax, string? sitioWeb, string? email)
+    public void ActualizarDatosContacto(Contacto contacto)
     {
-        TelefonoFijo = telefonoFijo;
-        TelefonoMovil = telefonoMovil;
-        TelefonoFax = telefonoFax;
-        SitioWeb = sitioWeb;
-        Email = email.ValidateNotNullOrEmpty(nameof(email));
-    }
-
-    public void ActualizarRazonSocial(string? razonSocial)
-    {
-        RazonSocial = razonSocial;
+        DatosContacto = contacto;
     }
 
     public class Builder
     {
-        private TipoPersona _tipoPersona;
-        private Identificacion _identificacion;
-        private string _primerNombre;
-        private string _primerApellido;
-        private Ubicacion _ubicacion;
-        private string _email;
-        private string? _segundoNombre;
-        private string? _segundoApellido;
-        private string? _razonSocial;
-        private string? _telefonoFijo;
-        private string? _telefonoMovil;
-        private string? _telefonoFax;
-        private string? _sitioWeb;
-
-        public Builder() { }
-
-        public Builder ConTipoPersona(TipoPersona tipoPersona)
+   
+        private readonly string _tipoPersona = string.Empty;
+        private readonly Identificacion _identificacion = null!;
+        private Nombre _nombre = null!;
+        private Ubicacion _ubicacion = null!;
+        private Contacto _datosContacto = null!;
+        public Builder(string tipoPersona, Identificacion identificacion) 
         {
-            _tipoPersona = tipoPersona.ValidateNull(nameof(tipoPersona));
-            return this;
+           
+            _tipoPersona = tipoPersona;
+            _identificacion = identificacion;
         }
-        public Builder ConIdentificacion(Identificacion identificacion)
+       
+        public Builder ConNombres(string? razonSocial, string? primerNombre, string? segundoNombre, string? primerApellido, string? segundoApellido)
         {
-            _identificacion = identificacion.ValidateNull(nameof(identificacion));
-            return this;
-        }
-
-        public Builder ConNombres(string primerNombre, string? segundoNombre, string primerApellido, string? segundoApellido)
-        {
-            _primerNombre = primerNombre.ValidateNotNullOrEmpty(nameof(primerNombre));
-            _segundoNombre = segundoNombre;
-            _primerApellido = primerApellido.ValidateNotNullOrEmpty(nameof(primerApellido));
-            _segundoApellido = segundoApellido;
+            if (_tipoPersona == "PN")
+            {
+                if (string.IsNullOrEmpty(primerNombre) || string.IsNullOrEmpty(primerApellido))
+                {
+                    throw new ArgumentException("Primer nombre y primer apellido son obligatorios para Persona Natural");
+                }
+            }
+            else if (_tipoPersona == "PJ")
+            {
+                razonSocial.ValidateNotNullOrEmpty(nameof(razonSocial), "Razón social es obligatoria para Persona Jurídica");
+            }
+            _nombre = Nombre.Crear(razonSocial, primerNombre, primerApellido, segundoNombre, segundoApellido);
             return this;
         }
 
@@ -102,39 +88,28 @@ public sealed class Tercero : BaseEntity<int>
             return this;
         }
 
-        public Builder ConContactos(string? telefonoFijo, string? telefonoMovil, string? telefonoFax, string? sitioWeb, string? email)
+        public Builder ConDatosContacto(string? telefonoFijo, string? telefonoMovil, string? telefonoFax, string? sitioWeb, string? email)
         {
-            _telefonoFijo = telefonoFijo;
-            _telefonoMovil = telefonoMovil;
-            _telefonoFax = telefonoFax;
-            _sitioWeb = sitioWeb;
-            _email = email.ValidateNotNullOrEmpty(nameof(email));
+            _datosContacto = Contacto.Crear(telefonoFijo, telefonoMovil, telefonoFax, sitioWeb, email);
             return this;
         }
 
-        public Builder ConRazonSocial(string? razonSocial)
-        {
-            _razonSocial = razonSocial;
-            return this;
-        }
 
         public Tercero Build()
         {
+          
+            if (_nombre is null || _ubicacion is null || _datosContacto is null)
+            {
+                throw new InvalidOperationException("Existen campos obligatorios no enviados");
+            }
+           
             return new Tercero
             {
-                TipoPersona = _tipoPersona.ValidateNull("TipoPersona"),
-                Identificacion = _identificacion.ValidateNull("Identificacion"),
-                PrimerNombre = _primerNombre.ValidateNotNullOrEmpty("primerNombre"),
-                SegundoNombre = _segundoNombre,
-                PrimerApellido = _primerApellido.ValidateNotNullOrEmpty("primerApellido"),
-                SegundoApellido = _segundoApellido,
-                RazonSocial = _razonSocial,
+                TipoPersonaId = _tipoPersona.ValidateNotNullOrEmpty(parameterName: nameof(TipoPersona)),
+                Identificacion = _identificacion.ValidateNull(nameof(Identificacion)),
+                Nombre = _nombre,
                 Ubicacion = _ubicacion,
-                TelefonoFijo = _telefonoFijo,
-                TelefonoMovil = _telefonoMovil,
-                TelefonoFax = _telefonoFax,
-                SitioWeb = _sitioWeb,
-                Email = _email
+                DatosContacto = _datosContacto
             };
         }
     }

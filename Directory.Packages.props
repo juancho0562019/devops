@@ -4,19 +4,22 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-
+    <PackageVersion Include="MicroElements.Swashbuckle.FluentValidation" Version="6.0.0" />
+    <PackageVersion Include="Microsoft.ApplicationInsights" Version="2.22.0" />
+    <PackageVersion Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Features" Version="2.1.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
     <PackageVersion Include="MSTest.TestAdapter" Version="3.2.0" />
     <PackageVersion Include="MSTest.TestFramework" Version="3.2.0" />
     <PackageVersion Include="coverlet.collector" Version="6.0.2" />
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageVersion Include="NSubstitute" Version="5.1.0" />
     <PackageVersion Include="NetArchTest.Rules" Version="1.3.2" />
-
     <PackageVersion Include="AspNetCore.HealthChecks.AzureStorage" Version="7.0.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.SqlServer" Version="8.0.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.0" />
     <PackageVersion Include="AutoMapper" Version="13.0.1" />
-    <PackageVersion Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
@@ -27,10 +30,10 @@
     <PackageVersion Include="Serilog.AspNetCore" Version="8.0.1" />
     <PackageVersion Include="Serilog.Sinks.ApplicationInsights" Version="4.0.0" />
     <PackageVersion Include="Serilog.Sinks.Console" Version="5.0.1" />
-
+    <PackageVersion Include="StackExchange.Redis" Version="2.8.0" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore.Annotations" Version="6.6.2" />
     <PackageVersion Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
-
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     <PackageVersion Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.3.1" />
@@ -48,13 +51,13 @@
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="8.0.4" />
-    <PackageVersion Include="Moq" Version="4.20.70" />
     <PackageVersion Include="NSwag.AspNetCore" Version="14.0.7" />
     <PackageVersion Include="NSwag.MSBuild" Version="14.0.7" />
     <PackageVersion Include="nunit" Version="3.14.0" />
     <PackageVersion Include="NUnit.Analyzers" Version="3.9.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="4.5.0" />
     <PackageVersion Include="Respawn" Version="6.2.1" />
+    <PackageVersion Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
     <PackageVersion Include="Testcontainers.MsSql" Version="3.8.0" />
   </ItemGroup>
 </Project>

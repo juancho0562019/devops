@@ -7,10 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Entidades\Commands\CreatePersonaNatural\CreatePN.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Newtonsoft.Json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,17 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commons\Exceptions\" />
-    <Folder Include="Features\Contactos\Commands\Create\" />
-    <Folder Include="Features\Contactos\Commands\Update\" />
-    <Folder Include="Features\Contactos\Queries\Get\" />
-    <Folder Include="Features\Contactos\Queries\GetAll\" />
-    <Folder Include="Features\Entidades\Commands\Create\" />
+    <Folder Include="Features\Entidades\Commands\CreatePersonaNatural\" />
     <Folder Include="Features\Entidades\Commands\Update\" />
     <Folder Include="Features\Entidades\Queries\Get\" />
-    <Folder Include="Features\Entidades\Queries\GetAll\" />
-    <Folder Include="Features\DocumentosIdentidad\" />
-    <Folder Include="Features\Terceros\Queries\GetAll\" />
+    <Folder Include="Features\Sedes\" />
   </ItemGroup>
 
 </Project>
